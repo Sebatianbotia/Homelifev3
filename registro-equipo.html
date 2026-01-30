@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registra tu Equipo | HomeLife</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+
+  <link rel="stylesheet" href="assets/css/registro-equipo.css" />
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <div id="navbar-container"></div>
+
+    <main class="section">
+        <div class="container">
+        <div class="form-card">
+            <div class="form-header">
+            <h1 class="form-title">REGISTRA TU EQUIPO</h1>
+            <p class="form-subtitle">Completa el formulario para registrar tu dispositivo.</p>
+            </div>
+
+            <form class="form" action="#" method="post">
+            <div class="grid">
+                <div class="field">
+                <label class="label" for="fullName">Nombre Completo <span class="req">(requerido)</span></label>
+                <input class="input" id="fullName" name="fullName" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="email">Correo electrónico <span class="req">(requerido)</span></label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="phone">Celular <span class="req">(requerido)</span></label>
+                <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="city">Ciudad <span class="req">(requerido)</span></label>
+                <input class="input" id="city" name="city" type="text" autocomplete="address-level2" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="purchasePlace">Lugar de Compra <span class="req">(requerido)</span></label>
+                <input class="input" id="purchasePlace" name="purchasePlace" type="text" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="purchaseDate">Fecha de Compra <span class="req">(requerido)</span></label>
+                <input class="input" id="purchaseDate" name="purchaseDate" type="date" required />
+                </div>
+
+                <div class="field">
+                <label class="label" for="product">Equipo <span class="req">(obligatorio)</span></label>
+                <select class="select" id="product" name="product" required>
+                    <option value="" selected disabled>Selecciona un equipo</option>
+                    <option value="tensiometro-bp1326">Tensiómetro BP1326 PLUS HM</option>
+                    <option value="nebulizador-ultrasonico">Nebulizador Ultrasónico Portátil</option>
+                    <option value="glucometro-50tiras">Glucómetro Digital con 50 Tiras</option>
+                </select>
+                </div>
+
+                <div class="field">
+                <label class="label" for="serial">
+                    Número de Serial del equipo (SN) <span class="req">(obligatorio)</span>
+                </label>
+                <input class="input" id="serial" name="serial" type="text" placeholder="Ej: HL-AB12C3" required />
+                <small class="hint">Lo encontrarás en la parte inferior del equipo.</small>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="legal">
+                <p>
+                Ley 1581: En mi calidad de titular de la información, actuando libre y voluntariamente,
+                autorizo de manera expresa e irrevocable a HOME MEDICAL GROUP SAS, o a quien represente
+                sus derechos, a realizar el tratamiento de mis datos personales recolectados en el presente
+                formulario, en los términos expresados en la política de tratamiento de la información
+                personal. Reconozco que tengo derecho a actualizar y rectificar mis datos o revocar la
+                autorización solicitando la supresión de los mismos.
+                </p>
+            </div>
+
+            <label class="check">
+                <input type="checkbox" name="accept" required />
+                <span>He leído y acepto la <a href="#" class="link">política de datos</a>.</span>
+            </label>
+
+            <div class="actions">
+                <button class="btn-primary" type="submit">Enviar</button>
+            </div>
+            </form>
+        </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    
+    
+    <div class="chatbot-container" id="chatbotContainer"></div>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+
+    <script src="assets/js/chatbot.js"></script> 
+    <script src="assets/js/components-loader.js"></script>
+
+    </body>
+</html>

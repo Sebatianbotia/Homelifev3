@@ -1,0 +1,350 @@
+{
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Tensiómetro Digital Automático Medic Life Pro",
+      "slug": "tensiometro-digital-automatico-medic-life-pro",
+      "category": "Tensiómetros",
+      "categorySlug": "tensiometros",
+      "brand": "Medic Life",
+      "price": 142425,
+      "originalPrice": 189900,
+      "discount": 25,
+      "inStock": true,
+      "stock": 45,
+      "rating": 5,
+      "reviewCount": 127,
+      "isNew": false,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Tensiómetro digital automático de última generación con detección de arritmias.",
+      "fullDescription": "Tensiómetro digital automático de última generación con tecnología de detección de arritmias y memoria para 2 usuarios con 60 mediciones cada uno. Ideal para uso doméstico y profesional.",
+      "features": [
+        "Medición automática de presión arterial",
+        "Detección de arritmias cardíacas",
+        "Memoria para 2 usuarios (120 mediciones)",
+        "Pantalla LCD de fácil lectura",
+        "Incluye estuche de transporte",
+        "Certificación INVIMA vigente"
+      ],
+      "specifications": {
+        "Rango de medición": "0-300 mmHg",
+        "Precisión": "±3 mmHg",
+        "Pantalla": "LCD digital grande",
+        "Alimentación": "4 pilas AA o adaptador AC",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012345"
+      },
+      "tags": ["tensiometro", "presion arterial", "diagnostico", "medic life", "automatico"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-002",
+      "name": "Termómetro Infrarrojo Sin Contacto Medic Life",
+      "slug": "termometro-infrarrojo-sin-contacto-medic-life",
+      "category": "Termómetros",
+      "categorySlug": "termometros",
+      "brand": "Medic Life",
+      "price": 89900,
+      "originalPrice": null,
+      "discount": 0,
+      "inStock": true,
+      "stock": 89,
+      "rating": 5,
+      "reviewCount": 89,
+      "isNew": true,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Termómetro infrarrojo sin contacto con medición en 1 segundo.",
+      "fullDescription": "Termómetro infrarrojo sin contacto con medición en 1 segundo. Ideal para uso familiar y profesional. Tecnología de medición sin contacto para máxima higiene.",
+      "features": [
+        "Medición sin contacto en 1 segundo",
+        "Modo frente y modo objeto",
+        "Memoria de 32 mediciones",
+        "Alarma de fiebre",
+        "Pantalla retroiluminada",
+        "Apagado automático"
+      ],
+      "specifications": {
+        "Rango de medición": "32°C - 42.9°C",
+        "Precisión": "±0.2°C",
+        "Distancia de medición": "5-15 cm",
+        "Pantalla": "LCD retroiluminada",
+        "Alimentación": "2 pilas AAA",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012346"
+      },
+      "tags": ["termometro", "infrarrojo", "sin contacto", "fiebre", "medic life"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-003",
+      "name": "Glucómetro Digital con 50 Tiras Reactivas",
+      "slug": "glucometro-digital-50-tiras-reactivas",
+      "category": "Glucometría",
+      "categorySlug": "glucometria",
+      "brand": "Medic Life",
+      "price": 110415,
+      "originalPrice": 129900,
+      "discount": 15,
+      "inStock": true,
+      "stock": 64,
+      "rating": 4,
+      "reviewCount": 64,
+      "isNew": false,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Sistema completo de monitoreo de glucosa con 50 tiras reactivas incluidas.",
+      "fullDescription": "Sistema completo de monitoreo de glucosa con 50 tiras reactivas incluidas. Resultados precisos en 5 segundos. Ideal para diabéticos que requieren monitoreo constante.",
+      "features": [
+        "Resultados en 5 segundos",
+        "Muestra de sangre pequeña (0.6 μL)",
+        "50 tiras reactivas incluidas",
+        "Memoria para 500 resultados",
+        "Conexión USB para PC",
+        "Estuche de transporte incluido"
+      ],
+      "specifications": {
+        "Rango de medición": "20-600 mg/dL",
+        "Precisión": "±15% o 15 mg/dL",
+        "Tiempo de medición": "5 segundos",
+        "Memoria": "500 resultados",
+        "Pantalla": "LCD grande",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012347"
+      },
+      "tags": ["glucometro", "diabetes", "glucosa", "tiras reactivas", "monitoreo"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-004",
+      "name": "Nebulizador Ultrasónico Portátil Medic Life",
+      "slug": "nebulizador-ultrasonico-portatil-medic-life",
+      "category": "Nebulizadores",
+      "categorySlug": "nebulizadores",
+      "brand": "Medic Life",
+      "price": 179900,
+      "originalPrice": null,
+      "discount": 0,
+      "inStock": true,
+      "stock": 152,
+      "rating": 5,
+      "reviewCount": 152,
+      "isNew": false,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Nebulizador ultrasónico portátil con tecnología de malla.",
+      "fullDescription": "Nebulizador ultrasónico portátil con tecnología de malla para terapias respiratorias efectivas. Operación silenciosa y portátil, ideal para niños y adultos.",
+      "features": [
+        "Tecnología de malla ultrasónica",
+        "Operación silenciosa (<30 dB)",
+        "Portátil y recargable",
+        "Tiempo de nebulización rápido",
+        "Incluye mascarillas adulto y niño",
+        "Fácil limpieza y mantenimiento"
+      ],
+      "specifications": {
+        "Tecnología": "Malla ultrasónica",
+        "Tamaño de partícula": "1-5 μm",
+        "Tasa de nebulización": "0.25 mL/min",
+        "Capacidad del tanque": "10 mL",
+        "Batería": "Recargable USB",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012348"
+      },
+      "tags": ["nebulizador", "ultrasonico", "respiratorio", "portatil", "asma"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-005",
+      "name": "Oxímetro de Pulso Digital Portátil",
+      "slug": "oximetro-pulso-digital-portatil",
+      "category": "Oxímetros",
+      "categorySlug": "oximetros",
+      "brand": "Medic Life",
+      "price": 55930,
+      "originalPrice": 79900,
+      "discount": 30,
+      "inStock": true,
+      "stock": 203,
+      "rating": 5,
+      "reviewCount": 203,
+      "isNew": false,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Oxímetro de pulso de dedo con pantalla OLED de alta definición.",
+      "fullDescription": "Oxímetro de pulso de dedo con pantalla OLED de alta definición. Medición instantánea de SpO2 y frecuencia cardíaca. Portátil y fácil de usar.",
+      "features": [
+        "Pantalla OLED multidireccional",
+        "Medición de SpO2 y frecuencia cardíaca",
+        "Indicador de nivel de batería",
+        "Apagado automático",
+        "Alarma visual y sonora",
+        "Incluye cordón y estuche"
+      ],
+      "specifications": {
+        "Rango SpO2": "0-100%",
+        "Precisión SpO2": "±2%",
+        "Rango pulso": "30-250 bpm",
+        "Precisión pulso": "±2 bpm",
+        "Pantalla": "OLED a color",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012349"
+      },
+      "tags": ["oximetro", "saturacion", "pulso", "spo2", "portatil"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-006",
+      "name": "Estetoscopio Profesional Medic Life Premium",
+      "slug": "estetoscopio-profesional-medic-life-premium",
+      "category": "Línea Médica",
+      "categorySlug": "linea-medica",
+      "brand": "Medic Life",
+      "price": 159900,
+      "originalPrice": null,
+      "discount": 0,
+      "inStock": true,
+      "stock": 98,
+      "rating": 5,
+      "reviewCount": 98,
+      "isNew": true,
+      "isFeatured": true,
+      "images": [
+        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Estetoscopio de alta precisión con campana de doble frecuencia.",
+      "fullDescription": "Estetoscopio de alta precisión con campana de doble frecuencia para uso profesional. Ideal para médicos, enfermeras y estudiantes de medicina.",
+      "features": [
+        "Campana de doble frecuencia",
+        "Membrana antifría",
+        "Tubos de alta calidad sin látex",
+        "Olivas suaves ergonómicas",
+        "Disponible en varios colores",
+        "Garantía de 2 años"
+      ],
+      "specifications": {
+        "Tipo": "Doble campana",
+        "Longitud del tubo": "69 cm",
+        "Material": "Acero inoxidable",
+        "Membrana": "Doble frecuencia",
+        "Colores disponibles": "Negro, Azul, Rojo, Gris",
+        "Garantía": "2 años",
+        "Registro INVIMA": "2024DM-0012350"
+      },
+      "tags": ["estetoscopio", "profesional", "diagnostico", "medico", "doble campana"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-007",
+      "name": "Botiquín de Primeros Auxilios Completo",
+      "slug": "botiquin-primeros-auxilios-completo",
+      "category": "Línea Médica",
+      "categorySlug": "linea-medica",
+      "brand": "HomeLife",
+      "price": 95920,
+      "originalPrice": 119900,
+      "discount": 20,
+      "inStock": true,
+      "stock": 76,
+      "rating": 4,
+      "reviewCount": 76,
+      "isNew": false,
+      "isFeatured": false,
+      "images": [
+        "https://images.unsplash.com/photo-1603398937036-5e84c7a6d2a0?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1603398937036-5e84c7a6d2a0?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Kit completo de primeros auxilios con más de 100 piezas.",
+      "fullDescription": "Kit completo de primeros auxilios con más de 100 piezas para hogar, oficina o vehículo. Organizado y fácil de transportar.",
+      "features": [
+        "Más de 100 piezas incluidas",
+        "Estuche resistente y portátil",
+        "Organización por compartimientos",
+        "Incluye manual de primeros auxilios",
+        "Ideal para 4-6 personas",
+        "Cumple normativa MinSalud"
+      ],
+      "specifications": {
+        "Piezas totales": "100+",
+        "Dimensiones": "30 x 20 x 10 cm",
+        "Peso": "1.2 kg",
+        "Material estuche": "Nylon resistente",
+        "Personas": "4-6",
+        "Garantía": "1 año",
+        "Registro INVIMA": "2024DM-0012351"
+      },
+      "tags": ["botiquin", "primeros auxilios", "emergencias", "seguridad", "completo"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    },
+    {
+      "id": "prod-008",
+      "name": "Kit de Curación Profesional Estéril",
+      "slug": "kit-curacion-profesional-esteril",
+      "category": "Línea Médica",
+      "categorySlug": "linea-medica",
+      "brand": "HomeLife",
+      "price": 45900,
+      "originalPrice": null,
+      "discount": 0,
+      "inStock": true,
+      "stock": 134,
+      "rating": 5,
+      "reviewCount": 134,
+      "isNew": false,
+      "isFeatured": false,
+      "images": [
+        "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=800&h=800&fit=crop&auto=format&q=80",
+        "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=800&h=800&fit=crop&auto=format&q=80"
+      ],
+      "shortDescription": "Kit de curación estéril desechable para procedimientos médicos.",
+      "fullDescription": "Kit de curación estéril desechable con todos los elementos necesarios para procedimientos médicos. Individual y completamente estéril.",
+      "features": [
+        "Completamente estéril",
+        "Empaque individual",
+        "Incluye gasas, pinzas y más",
+        "Uso profesional",
+        "Fecha de vencimiento clara",
+        "Cumple normas de bioseguridad"
+      ],
+      "specifications": {
+        "Contenido": "Gasas, pinzas, guantes, campo",
+        "Esterilización": "Óxido de etileno",
+        "Empaque": "Individual sellado",
+        "Caducidad": "3 años",
+        "Uso": "Único/Desechable",
+        "Garantía": "N/A",
+        "Registro INVIMA": "2024DM-0012352"
+      },
+      "tags": ["kit curacion", "esteril", "consumible", "medico", "desechable"],
+      "techSheetPdf": "assets/pdfs/fichas/termometro-homelife.pdf"
+    }
+  ],
+  "categories": [
+    { "id": "cat-001", "name": "Babylife", "slug": "babylife", "icon": "baby", "productCount": 0 },
+    { "id": "cat-002", "name": "Básculas", "slug": "basculas", "icon": "scale", "productCount": 0 },
+    { "id": "cat-003", "name": "Fisioterapia", "slug": "fisioterapia", "icon": "physio", "productCount": 0 },
+    { "id": "cat-004", "name": "Glucometría", "slug": "glucometria", "icon": "glucose", "productCount": 1 },
+    { "id": "cat-005", "name": "Línea Médica", "slug": "linea-medica", "icon": "medical", "productCount": 3 },
+    { "id": "cat-006", "name": "Nebulizadores", "slug": "nebulizadores", "icon": "nebulizer", "productCount": 1 },
+    { "id": "cat-007", "name": "Oxímetros", "slug": "oximetros", "icon": "oximeter", "productCount": 1 },
+    { "id": "cat-008", "name": "Termómetros", "slug": "termometros", "icon": "thermometer", "productCount": 1 },
+    { "id": "cat-009", "name": "Tensiómetros", "slug": "tensiometros", "icon": "pressure", "productCount": 1 }
+  ]
+}

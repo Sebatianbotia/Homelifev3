@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Quiénes Somos | HomeLife</title>
+    <meta name="description" content="Conoce HomeLife, líderes en equipos médicos certificados INVIMA con más de 15 años de experiencia en Colombia.">
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    
+    <style>
+        /* Estilos específicos para página nosotros */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-primary);
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .about-section {
+            margin-bottom: 80px;
+        }
+
+        .about-section h2 {
+            font-family: var(--font-primary);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .about-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--medic-turquoise);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .about-card-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--white);
+        }
+
+        .about-card h3 {
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .stats-section {
+            background: var(--light-gray);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-family: var(--font-primary);
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--medic-turquoise);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .team-section {
+            background: var(--white);
+            padding: 80px 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid var(--medic-turquoise);
+        }
+
+        .team-member h4 {
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .team-member-role {
+            font-size: 14px;
+            color: var(--medic-turquoise);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .certifications-section {
+            background: var(--light-gray);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .certification-badge {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .certification-badge svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--medic-turquoise);
+            margin-bottom: 15px;
+        }
+
+        .certification-badge h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 36px;
+            }
+
+            .about-hero p {
+                font-size: 18px;
+            }
+
+            .stat-number {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <div id="header-container"></div>
+    <div id="navbar-container"></div>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="separator">›</span>
+            <span class="current">Nosotros</span>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="about-hero">
+        <h1>Acerca de HomeLife</h1>
+        <p>Líderes en equipos médicos certificados, comprometidos con tu salud y bienestar desde hace más de 15 años</p>
+    </section>
+
+    <!-- ===== CONTENIDO ===== -->
+    <div class="about-content">
+        
+        <!-- Nuestra Historia -->
+        <div class="about-section">
+            <h2>Nuestra Historia</h2>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.8; color: var(--dark-gray);">
+                Desde 2010, HomeLife se ha dedicado a proporcionar equipos médicos de la más alta calidad a hogares, 
+                clínicas y hospitales en toda Colombia. Nacimos con la visión de hacer accesible la tecnología médica 
+                de vanguardia para todos, manteniendo los más altos estándares de calidad y certificación INVIMA.
+            </p>
+        </div>
+
+        <!-- Misión, Visión, Valores -->
+        <div class="about-section">
+            <h2>Nuestros Pilares</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>
+                        Proporcionar equipos médicos certificados de alta calidad que mejoren la salud y bienestar 
+                        de nuestros clientes, con un servicio excepcional y precios justos.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>
+                        Ser la empresa líder en Colombia en distribución de equipos médicos, reconocida por nuestra 
+                        excelencia, innovación y compromiso con la salud de las personas.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>
+                        Calidad, Integridad, Compromiso, Innovación y Responsabilidad Social. Estos valores guían 
+                        cada decisión que tomamos y cada producto que ofrecemos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ESTADÍSTICAS ===== -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Clientes Satisfechos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Productos Certificados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Certificación INVIMA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICACIONES ===== -->
+    <section class="certifications-section" id="certificaciones">
+        <h2 style="font-family: var(--font-primary); font-size: 36px; font-weight: 800; color: var(--primary-blue); margin-bottom: 20px;">
+            Certificaciones y Garantías
+        </h2>
+        <p style="max-width: 700px; margin: 0 auto 40px; color: var(--text-gray);">
+            Todos nuestros productos cumplen con los más altos estándares de calidad y seguridad
+        </p>
+        
+        <div class="certifications-grid">
+            <div class="certification-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+                <h4>Certificación INVIMA</h4>
+            </div>
+            <div class="certification-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                </svg>
+                <h4>ISO 9001:2015</h4>
+            </div>
+            <div class="certification-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+                <h4>ISO 13485</h4>
+            </div>
+            <div class="certification-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h4>Garantía 2 Años</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL DE CARRITO ===== -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+            <div class="cart-modal-body">
+                <h2>🛒 Mi Carrito</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary" style="display: none;">
+                    <div class="cart-summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span>Envío:</span>
+                        <span id="cartShipping">Gratis</span>
+                    </div>
+                    <div id="cartSavings"></div>
+                    <div class="cart-summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="Cart.checkout()" id="checkoutBtn" style="display: none;">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div id="footer-container"></div>
+
+
+    <!-- Contenedor del chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+    </div>
+
+
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+</body>
+</html>

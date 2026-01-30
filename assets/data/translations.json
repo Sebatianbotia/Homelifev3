@@ -1,0 +1,406 @@
+{
+  "es": {
+    "header": {
+      "search_placeholder": "Buscar productos, marcas, categorías...",
+      "account": "Cuenta",
+      "favorites": "Favoritos",
+      "cart": "Carrito"
+    },
+    "nav": {
+      "home": "Inicio",
+      "products": "Productos",
+      "blog": "Blog",
+      "about": "Nosotros",
+      "contact": "Contacto"
+    },
+    "ticker": {
+      "certification": "Certificación INVIMA Vigente",
+      "free_shipping": "Envío GRATIS en compras superiores a $150.000",
+      "warranty": "Garantía extendida 2 años",
+      "experience": "+15 años de experiencia en el sector médico"
+    },
+    "hero": {
+      "slide1": {
+        "badge": "Nueva Línea Medic Life 2026",
+        "title": "Equipos Médicos de Alta Tecnología",
+        "description": "Descubre nuestra selección premium de dispositivos médicos con certificación INVIMA. Calidad, confiabilidad y tecnología de vanguardia.",
+        "btn_primary": "Explorar Productos",
+        "btn_secondary": "Cotizar Ahora"
+      },
+      "slide2": {
+        "badge": "Ofertas Especiales",
+        "title": "Hasta 30% de Descuento",
+        "description": "Aprovecha nuestras promociones exclusivas en equipos médicos certificados. Stock limitado.",
+        "btn_primary": "Ver Ofertas",
+        "btn_secondary": "Más Información"
+      },
+      "slide3": {
+        "badge": "Certificación INVIMA",
+        "title": "100% Certificados y Garantizados",
+        "description": "Todos nuestros equipos cuentan con registro sanitario INVIMA vigente y garantía extendida de 2 años.",
+        "btn_primary": "Verificar Certificados",
+        "btn_secondary": "Conocer Más"
+      }
+    },
+    "why_homelife": {
+      "title": "¿Por Qué Elegir HomeLife?",
+      "subtitle": "Somos líderes en equipos médicos certificados con más de 15 años de experiencia en el sector salud",
+      "reason1": {
+        "title": "Calidad Certificada",
+        "description": "Todos nuestros productos cuentan con certificación INVIMA y cumplen estándares internacionales de calidad."
+      },
+      "reason2": {
+        "title": "Tecnología de Vanguardia",
+        "description": "Equipos médicos de última generación con la más avanzada tecnología para diagnóstico y tratamiento."
+      },
+      "reason3": {
+        "title": "Garantía Extendida",
+        "description": "2 años de garantía en todos nuestros productos más servicio técnico especializado incluido."
+      },
+      "reason4": {
+        "title": "Asesoría Profesional",
+        "description": "Equipo de expertos disponibles para asesorarte en la selección del equipo médico ideal para tus necesidades."
+      }
+    },
+    "products": {
+      "title": "Productos Destacados",
+      "subtitle": "Los equipos médicos más solicitados con certificación INVIMA",
+      "all_categories": "Todas las Categorías",
+      "view_details": "Ver Detalles",
+      "add_to_cart": "Agregar al Carrito",
+      "quick_view": "Vista Rápida",
+      "new": "Nuevo",
+      "discount": "Descuento",
+      "save": "Ahorras",
+      "reviews": "reseñas",
+      "out_of_stock": "Agotado",
+      "in_stock": "Disponible",
+      "categories": "Categorías de Productos"
+    },
+    "blog": {
+      "title": "Blog de Salud",
+      "subtitle": "Artículos, consejos y novedades sobre salud y equipos médicos",
+      "read_more": "Leer Más",
+      "published_on": "Publicado el",
+      "by": "por",
+      "minutes_read": "min de lectura"
+    },
+    "footer": {
+      "company": {
+        "title": "HomeLife",
+        "description": "Líderes en equipos médicos certificados. Comprometidos con la salud y el bienestar de los colombianos desde hace más de 15 años."
+      },
+      "products_menu": {
+        "title": "Productos",
+        "diagnostic": "Equipos de Diagnóstico",
+        "furniture": "Mobiliario Médico",
+        "consumables": "Consumibles",
+        "laboratory": "Laboratorio"
+      },
+      "services_menu": {
+        "title": "Servicios",
+        "consulting": "Asesoría Especializada",
+        "maintenance": "Mantenimiento",
+        "training": "Capacitación",
+        "warranty": "Garantía Extendida"
+      },
+      "contact": {
+        "title": "Contacto",
+        "phone": "(601) 123-4567",
+        "email": "info@homelife.com.co",
+        "location": "Bogotá, Colombia",
+        "schedule": "Lun - Vie: 8:00 AM - 6:00 PM",
+        "free_shipping": "Envío gratis en compras superiores a $150.000"
+      },
+      "social": {
+        "title": "Síguenos",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Recibe ofertas exclusivas y novedades",
+        "placeholder": "Tu correo electrónico",
+        "subscribe": "Suscribirse"
+      },
+      "copyright": "© 2026 HomeLife - Best For Your Life. Todos los derechos reservados.",
+      "developed_by": "Diseñado por Zowl Web Design"
+    },
+    "cart": {
+      "title": "Mi Carrito",
+      "empty": "Tu carrito está vacío",
+      "empty_description": "Agrega productos para comenzar tu compra",
+      "subtotal": "Subtotal",
+      "shipping": "Envío",
+      "free": "Gratis",
+      "total": "Total",
+      "continue_shopping": "Seguir Comprando",
+      "proceed_checkout": "Proceder al Pago",
+      "remove": "Eliminar",
+      "update": "Actualizar",
+      "quantity": "Cantidad"
+    },
+    "auth": {
+      "login": "Iniciar Sesión",
+      "register": "Registrarse",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "confirm_password": "Confirmar Contraseña",
+      "full_name": "Nombre Completo",
+      "phone": "Teléfono",
+      "remember_me": "Recordarme",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "no_account": "¿No tienes cuenta?",
+      "have_account": "¿Ya tienes cuenta?",
+      "terms": "Acepto los términos y condiciones",
+      "or_continue": "O continuar con"
+    },
+    "chatbot": {
+      "title": "Asistente HomeLife",
+      "online": "En línea",
+      "offline": "Fuera de línea",
+      "placeholder": "Escribe tu mensaje...",
+      "welcome": "¡Hola! 👋 Soy tu asistente virtual de HomeLife. ¿En qué puedo ayudarte hoy?",
+      "options": {
+        "products": "Ver productos",
+        "certification": "Certificación INVIMA",
+        "order_status": "Estado de pedido",
+        "advisor": "Hablar con asesor"
+      }
+    },
+    "notifications": {
+      "added_to_cart": "Producto agregado al carrito",
+      "removed_from_cart": "Producto eliminado del carrito",
+      "added_to_favorites": "Producto agregado a favoritos",
+      "error": "Ocurrió un error. Intenta nuevamente.",
+      "success": "Operación exitosa",
+      "copied": "Copiado al portapapeles"
+    },
+    "common": {
+      "loading": "Cargando...",
+      "search": "Buscar",
+      "filter": "Filtrar",
+      "sort": "Ordenar",
+      "price": "Precio",
+      "name": "Nombre",
+      "popularity": "Popularidad",
+      "newest": "Más recientes",
+      "low_to_high": "Precio: Menor a Mayor",
+      "high_to_low": "Precio: Mayor a Menor",
+      "apply": "Aplicar",
+      "clear": "Limpiar",
+      "close": "Cerrar",
+      "submit": "Enviar",
+      "cancel": "Cancelar",
+      "back": "Volver",
+      "next": "Siguiente",
+      "previous": "Anterior",
+      "page": "Página",
+      "of": "de"
+    }
+  },
+  "en": {
+    "header": {
+      "search_placeholder": "Search products, brands, categories...",
+      "account": "Account",
+      "favorites": "Favorites",
+      "cart": "Cart"
+    },
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "blog": "Blog",
+      "about": "About Us",
+      "contact": "Contact"
+    },
+    "ticker": {
+      "certification": "Valid INVIMA Certification",
+      "free_shipping": "FREE Shipping on purchases over $150,000",
+      "warranty": "2-year extended warranty",
+      "experience": "+15 years of experience in the medical sector"
+    },
+    "hero": {
+      "slide1": {
+        "badge": "New Medic Life Line 2026",
+        "title": "High-Tech Medical Equipment",
+        "description": "Discover our premium selection of medical devices with INVIMA certification. Quality, reliability, and cutting-edge technology.",
+        "btn_primary": "Explore Products",
+        "btn_secondary": "Get Quote"
+      },
+      "slide2": {
+        "badge": "Special Offers",
+        "title": "Up to 30% Discount",
+        "description": "Take advantage of our exclusive promotions on certified medical equipment. Limited stock.",
+        "btn_primary": "View Offers",
+        "btn_secondary": "More Information"
+      },
+      "slide3": {
+        "badge": "INVIMA Certification",
+        "title": "100% Certified and Guaranteed",
+        "description": "All our equipment has valid INVIMA sanitary registration and 2-year extended warranty.",
+        "btn_primary": "Verify Certificates",
+        "btn_secondary": "Learn More"
+      }
+    },
+    "why_homelife": {
+      "title": "Why Choose HomeLife?",
+      "subtitle": "We are leaders in certified medical equipment with over 15 years of experience in the health sector",
+      "reason1": {
+        "title": "Certified Quality",
+        "description": "All our products have INVIMA certification and meet international quality standards."
+      },
+      "reason2": {
+        "title": "Cutting-Edge Technology",
+        "description": "State-of-the-art medical equipment with the most advanced technology for diagnosis and treatment."
+      },
+      "reason3": {
+        "title": "Extended Warranty",
+        "description": "2-year warranty on all our products plus specialized technical service included."
+      },
+      "reason4": {
+        "title": "Professional Advice",
+        "description": "Team of experts available to advise you in selecting the ideal medical equipment for your needs."
+      }
+    },
+    "products": {
+      "title": "Featured Products",
+      "subtitle": "The most requested medical equipment with INVIMA certification",
+      "all_categories": "All Categories",
+      "view_details": "View Details",
+      "add_to_cart": "Add to Cart",
+      "quick_view": "Quick View",
+      "new": "New",
+      "discount": "Discount",
+      "save": "Save",
+      "reviews": "reviews",
+      "out_of_stock": "Out of Stock",
+      "in_stock": "In Stock",
+      "categories": "Product Categories"
+    },
+    "blog": {
+      "title": "Health Blog",
+      "subtitle": "Articles, tips, and news about health and medical equipment",
+      "read_more": "Read More",
+      "published_on": "Published on",
+      "by": "by",
+      "minutes_read": "min read"
+    },
+    "footer": {
+      "company": {
+        "title": "HomeLife",
+        "description": "Leaders in certified medical equipment. Committed to the health and well-being of Colombians for over 15 years."
+      },
+      "products_menu": {
+        "title": "Products",
+        "diagnostic": "Diagnostic Equipment",
+        "furniture": "Medical Furniture",
+        "consumables": "Consumables",
+        "laboratory": "Laboratory"
+      },
+      "services_menu": {
+        "title": "Services",
+        "consulting": "Specialized Consulting",
+        "maintenance": "Maintenance",
+        "training": "Training",
+        "warranty": "Extended Warranty"
+      },
+      "contact": {
+        "title": "Contact",
+        "phone": "(601) 123-4567",
+        "email": "info@homelife.com.co",
+        "location": "Bogotá, Colombia",
+        "schedule": "Mon - Fri: 8:00 AM - 6:00 PM",
+        "free_shipping": "Free shipping on purchases over $150,000"
+      },
+      "social": {
+        "title": "Follow Us",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn"
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Receive exclusive offers and news",
+        "placeholder": "Your email address",
+        "subscribe": "Subscribe"
+      },
+      "copyright": "© 2026 HomeLife - Best For Your Life. All rights reserved.",
+      "developed_by": "Designed by Zowl Web Design"
+    },
+    "cart": {
+      "title": "My Cart",
+      "empty": "Your cart is empty",
+      "empty_description": "Add products to start your purchase",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "free": "Free",
+      "total": "Total",
+      "continue_shopping": "Continue Shopping",
+      "proceed_checkout": "Proceed to Checkout",
+      "remove": "Remove",
+      "update": "Update",
+      "quantity": "Quantity"
+    },
+    "auth": {
+      "login": "Sign In",
+      "register": "Sign Up",
+      "email": "Email Address",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "full_name": "Full Name",
+      "phone": "Phone",
+      "remember_me": "Remember Me",
+      "forgot_password": "Forgot your password?",
+      "no_account": "Don't have an account?",
+      "have_account": "Already have an account?",
+      "terms": "I accept the terms and conditions",
+      "or_continue": "Or continue with"
+    },
+    "chatbot": {
+      "title": "HomeLife Assistant",
+      "online": "Online",
+      "offline": "Offline",
+      "placeholder": "Type your message...",
+      "welcome": "Hello! 👋 I'm your HomeLife virtual assistant. How can I help you today?",
+      "options": {
+        "products": "View products",
+        "certification": "INVIMA Certification",
+        "order_status": "Order status",
+        "advisor": "Talk to advisor"
+      }
+    },
+    "notifications": {
+      "added_to_cart": "Product added to cart",
+      "removed_from_cart": "Product removed from cart",
+      "added_to_favorites": "Product added to favorites",
+      "error": "An error occurred. Please try again.",
+      "success": "Operation successful",
+      "copied": "Copied to clipboard"
+    },
+    "common": {
+      "loading": "Loading...",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort",
+      "price": "Price",
+      "name": "Name",
+      "popularity": "Popularity",
+      "newest": "Newest",
+      "low_to_high": "Price: Low to High",
+      "high_to_low": "Price: High to Low",
+      "apply": "Apply",
+      "clear": "Clear",
+      "close": "Close",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "page": "Page",
+      "of": "of"
+    }
+  }
+}

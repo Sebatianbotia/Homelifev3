@@ -1,0 +1,367 @@
+{
+  "posts": [
+    {
+      "id": "post-001",
+      "slug": "como-medir-presion-arterial-correctamente",
+      "title": "Cómo Medir la Presión Arterial Correctamente",
+      "excerpt": "Aprende la técnica correcta para medir tu presión arterial en casa y obtener lecturas precisas con tu tensiómetro digital.",
+      "category": "Guías de Uso",
+      "categorySlug": "guias-uso",
+      "author": "Dr. Carlos Mendoza",
+      "authorImage": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-20",
+      "readTime": 5,
+      "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["tensiómetro", "presión arterial", "salud cardiovascular"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "La medición correcta de la presión arterial es fundamental para el diagnóstico y seguimiento de enfermedades cardiovasculares. En este artículo, te enseñaremos la técnica adecuada para obtener lecturas precisas."
+        },
+        {
+          "type": "heading",
+          "text": "Preparación antes de la medición"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Evita fumar, tomar café o hacer ejercicio al menos 30 minutos antes",
+            "Vacía tu vejiga antes de la medición",
+            "Siéntate cómodamente con la espalda apoyada durante 5 minutos",
+            "Mantén los pies apoyados en el suelo, sin cruzar las piernas",
+            "Coloca el brazo a la altura del corazón, apoyado en una mesa"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Técnica de medición correcta"
+        },
+        {
+          "type": "paragraph",
+          "text": "Coloca el brazalete del tensiómetro 2-3 cm por encima del codo, asegurándote de que quede ajustado pero no demasiado apretado. El tubo debe quedar en línea con el centro de tu brazo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Presiona el botón de inicio y permanece quieto y en silencio durante la medición. No hables ni te muevas. El proceso tarda aproximadamente 30-40 segundos."
+        },
+        {
+          "type": "heading",
+          "text": "Interpretación de resultados"
+        },
+        {
+          "type": "paragraph",
+          "text": "Una presión arterial normal es inferior a 120/80 mmHg. Si obtienes lecturas consistentemente elevadas (≥130/80 mmHg), consulta con tu médico. Recuerda tomar al menos dos mediciones con un minuto de diferencia y promediar los resultados."
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "post-002",
+      "slug": "beneficios-oximetro-pulso-hogar",
+      "title": "Beneficios de Tener un Oxímetro de Pulso en Casa",
+      "excerpt": "Descubre por qué un oxímetro de pulso es esencial para monitorear tu salud respiratoria y detectar problemas a tiempo.",
+      "category": "Salud Preventiva",
+      "categorySlug": "salud-preventiva",
+      "author": "Dra. Ana Martínez",
+      "authorImage": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-18",
+      "readTime": 4,
+      "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["oxímetro", "salud respiratoria", "prevención"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "El oxímetro de pulso se ha convertido en un dispositivo esencial para el monitoreo de la salud en casa, especialmente después de la pandemia. Este pequeño aparato puede salvar vidas al detectar tempranamente problemas respiratorios."
+        },
+        {
+          "type": "heading",
+          "text": "¿Qué mide un oxímetro?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Un oxímetro de pulso mide dos parámetros vitales: la saturación de oxígeno en sangre (SpO2) y la frecuencia cardíaca. La saturación normal debe estar entre 95-100%. Valores por debajo de 90% requieren atención médica inmediata."
+        },
+        {
+          "type": "heading",
+          "text": "Cuándo usar el oxímetro"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Si tienes enfermedades respiratorias crónicas (EPOC, asma)",
+            "Durante infecciones respiratorias o gripe",
+            "Si practicas deportes de altura",
+            "Para monitorear la recuperación post-COVID",
+            "Si experimentas dificultad para respirar"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ventajas de tener un oxímetro en casa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tener un oxímetro te permite detectar problemas respiratorios antes de que se vuelvan graves, reduciendo visitas innecesarias al hospital y dándote tranquilidad sobre tu estado de salud. Es especialmente útil para personas con condiciones crónicas o adultos mayores."
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "post-003",
+      "slug": "guia-compra-nebulizador-hogar",
+      "title": "Guía Completa para Comprar un Nebulizador",
+      "excerpt": "Todo lo que necesitas saber antes de comprar un nebulizador para tratamientos respiratorios en casa.",
+      "category": "Guías de Compra",
+      "categorySlug": "guias-compra",
+      "author": "Dr. Roberto Silva",
+      "authorImage": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-15",
+      "readTime": 6,
+      "image": "https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["nebulizador", "guía de compra", "tratamientos respiratorios"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Elegir el nebulizador adecuado puede marcar una gran diferencia en la efectividad de tus tratamientos respiratorios. Esta guía te ayudará a tomar la mejor decisión."
+        },
+        {
+          "type": "heading",
+          "text": "Tipos de nebulizadores"
+        },
+        {
+          "type": "paragraph",
+          "text": "Existen tres tipos principales de nebulizadores: de compresor (jet), ultrasónicos y de malla. Cada uno tiene ventajas específicas según tus necesidades."
+        },
+        {
+          "type": "heading",
+          "text": "Nebulizadores de compresor"
+        },
+        {
+          "type": "paragraph",
+          "text": "Son los más económicos y duraderos. Funcionan con aire comprimido para convertir el medicamento líquido en aerosol. Son ideales para uso doméstico regular, aunque pueden ser un poco ruidosos."
+        },
+        {
+          "type": "heading",
+          "text": "Nebulizadores ultrasónicos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Utilizan vibraciones de alta frecuencia para crear el aerosol. Son silenciosos y rápidos, perfectos para niños o uso nocturno. Sin embargo, no son compatibles con todos los medicamentos."
+        },
+        {
+          "type": "heading",
+          "text": "Nebulizadores de malla"
+        },
+        {
+          "type": "paragraph",
+          "text": "La tecnología más avanzada y portátil. Funcionan con batería, son completamente silenciosos y muy eficientes. Ideales para personas que necesitan tratamiento fuera de casa."
+        },
+        {
+          "type": "heading",
+          "text": "Factores a considerar"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Frecuencia de uso y portabilidad necesaria",
+            "Edad del usuario (niños, adultos, ancianos)",
+            "Nivel de ruido aceptable",
+            "Tiempo de nebulización deseado",
+            "Presupuesto disponible",
+            "Compatibilidad con medicamentos específicos"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Recuerda siempre verificar que el nebulizador tenga certificación INVIMA y garantía del fabricante. En HomeLife ofrecemos asesoría personalizada para ayudarte a elegir el modelo perfecto para ti."
+        }
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "post-004",
+      "slug": "control-diabetes-glucometro-digital",
+      "title": "Control de la Diabetes con Glucómetro Digital",
+      "excerpt": "Aprende a usar correctamente tu glucómetro y mantén tu diabetes bajo control con mediciones precisas.",
+      "category": "Diabetes",
+      "categorySlug": "diabetes",
+      "author": "Dra. María González",
+      "authorImage": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-12",
+      "readTime": 7,
+      "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["diabetes", "glucómetro", "control glucémico"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "El control regular de la glucosa es fundamental para el manejo exitoso de la diabetes. Un glucómetro digital confiable es tu mejor aliado en este proceso."
+        },
+        {
+          "type": "heading",
+          "text": "Frecuencia de medición recomendada"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frecuencia depende de tu tipo de diabetes y tratamiento. Para diabetes tipo 1, se recomienda medir 4-6 veces al día. Para tipo 2 con insulina, 2-4 veces al día. Consulta con tu médico tu plan personalizado."
+        },
+        {
+          "type": "heading",
+          "text": "Técnica correcta de medición"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Lávate las manos con agua tibia y jabón",
+            "Seca bien tus manos antes de la punción",
+            "Usa los lados de los dedos, no la punta",
+            "Rota el dedo utilizado en cada medición",
+            "Aplica la primera gota de sangre a la tira reactiva",
+            "Registra tus resultados en un diario"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Interpretación de resultados"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los niveles normales varían según el momento del día. En ayunas: 70-100 mg/dL. Después de comer (2 horas): menos de 140 mg/dL. Consulta con tu médico tus metas personalizadas según tu condición."
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "post-005",
+      "slug": "importancia-certificacion-invima",
+      "title": "Importancia de la Certificación INVIMA en Equipos Médicos",
+      "excerpt": "Descubre por qué es crucial comprar equipos médicos con certificación INVIMA y cómo verificar su autenticidad.",
+      "category": "Certificaciones",
+      "categorySlug": "certificaciones",
+      "author": "Ing. Luis Ramírez",
+      "authorImage": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-10",
+      "readTime": 5,
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["INVIMA", "certificación", "seguridad"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "La certificación INVIMA es tu garantía de seguridad, calidad y eficacia en equipos médicos. Comprar productos sin esta certificación pone en riesgo tu salud."
+        },
+        {
+          "type": "heading",
+          "text": "¿Qué es INVIMA?"
+        },
+        {
+          "type": "paragraph",
+          "text": "El Instituto Nacional de Vigilancia de Medicamentos y Alimentos (INVIMA) es la entidad colombiana encargada de regular y controlar la calidad de dispositivos médicos. Su certificación garantiza que el producto cumple con estándares internacionales."
+        },
+        {
+          "type": "heading",
+          "text": "Riesgos de equipos sin certificación"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mediciones inexactas que pueden llevar a diagnósticos erróneos",
+            "Materiales de baja calidad potencialmente tóxicos",
+            "Falta de respaldo técnico y garantía",
+            "Riesgo de mal funcionamiento o falla del equipo",
+            "Sin trazabilidad en caso de problemas"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cómo verificar la certificación"
+        },
+        {
+          "type": "paragraph",
+          "text": "Busca el número de registro sanitario INVIMA en el empaque o manual del producto. Puedes verificar su autenticidad en la página web oficial de INVIMA ingresando este número. En HomeLife, todos nuestros productos incluyen su certificado visible."
+        }
+      ],
+      "isFeatured": false
+    },
+    {
+      "id": "post-006",
+      "slug": "termometro-infrarrojo-vs-digital",
+      "title": "Termómetro Infrarrojo vs Digital: ¿Cuál Elegir?",
+      "excerpt": "Comparación detallada entre termómetros infrarrojos y digitales para ayudarte a elegir el mejor para tu familia.",
+      "category": "Guías de Compra",
+      "categorySlug": "guias-compra",
+      "author": "Dra. Patricia Ruiz",
+      "authorImage": "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=100&h=100&fit=crop&auto=format&q=80",
+      "publishDate": "2026-01-08",
+      "readTime": 4,
+      "image": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&h=500&fit=crop&auto=format&q=80",
+      "tags": ["termómetro", "comparativa", "guía de compra"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Elegir el termómetro adecuado es importante para el cuidado de la salud familiar. Conoce las diferencias entre los tipos más populares."
+        },
+        {
+          "type": "heading",
+          "text": "Termómetros Digitales"
+        },
+        {
+          "type": "paragraph",
+          "text": "Son económicos, precisos y fáciles de usar. Se pueden usar por vía oral, axilar o rectal. La medición toma entre 30 segundos y 2 minutos. Ideales para uso doméstico general."
+        },
+        {
+          "type": "heading",
+          "text": "Termómetros Infrarrojos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Miden la temperatura sin contacto en solo 1 segundo. Perfectos para bebés y niños, ya que no los molestan. Más costosos pero muy convenientes para familias con niños pequeños."
+        },
+        {
+          "type": "heading",
+          "text": "¿Cuál elegir?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Si tienes bebés o niños pequeños, el infrarrojo es la mejor opción por su rapidez y comodidad. Para adultos y uso general, el digital es suficiente y más económico. Lo ideal es tener ambos tipos en casa."
+        }
+      ],
+      "isFeatured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-blog-001",
+      "name": "Guías de Uso",
+      "slug": "guias-uso",
+      "description": "Instrucciones y consejos para usar correctamente equipos médicos",
+      "postCount": 1
+    },
+    {
+      "id": "cat-blog-002",
+      "name": "Salud Preventiva",
+      "slug": "salud-preventiva",
+      "description": "Consejos para prevenir enfermedades y mantener la salud",
+      "postCount": 1
+    },
+    {
+      "id": "cat-blog-003",
+      "name": "Guías de Compra",
+      "slug": "guias-compra",
+      "description": "Ayuda para elegir los mejores equipos médicos",
+      "postCount": 2
+    },
+    {
+      "id": "cat-blog-004",
+      "name": "Diabetes",
+      "slug": "diabetes",
+      "description": "Información sobre manejo y control de diabetes",
+      "postCount": 1
+    },
+    {
+      "id": "cat-blog-005",
+      "name": "Certificaciones",
+      "slug": "certificaciones",
+      "description": "Información sobre certificaciones y regulaciones",
+      "postCount": 1
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículo del Blog | HomeLife</title>
+    <meta name="description" content="Lee nuestros artículos sobre salud, equipos médicos y consejos de expertos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+</head>
+<body>
+
+   <div id="header-container"></div>
+    <div id="navbar-container"></div>
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="separator">›</span>
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current" id="breadcrumbTitle">Artículo</span>
+        </div>
+    </div>
+
+    <!-- ===== HEADER DEL ARTÍCULO ===== -->
+    <div class="article-header">
+        <div class="container">
+            <span class="article-category" id="articleCategory">Categoría</span>
+            <h1 class="article-title" id="articleTitle">Título del Artículo</h1>
+            
+            <div class="article-meta">
+                <div class="article-author-info">
+                    <img src="" alt="" class="article-author-avatar" id="authorAvatar">
+                    <div class="article-author-details">
+                        <h4 id="authorName">Autor</h4>
+                        <span id="publishDate">Fecha</span>
+                    </div>
+                </div>
+                
+                <div class="article-stats">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span id="readTime">5</span> min de lectura
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="article-content">
+        <img src="" alt="" class="article-image" id="articleImage">
+        
+        <div class="article-body" id="articleBody">
+        </div>
+
+        <div class="article-tags" id="articleTags">
+        </div>
+    </article>
+
+    <section class="related-articles section bg-light">
+        <div class="container">
+            <h2 class="section-title">Artículos Relacionados</h2>
+            <div class="blog-grid" id="relatedArticles">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL DE CARRITO ===== -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+            <div class="cart-modal-body">
+                <h2>🛒 Mi Carrito</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary" style="display: none;">
+                    <div class="cart-summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span>Envío:</span>
+                        <span id="cartShipping">Gratis</span>
+                    </div>
+                    <div id="cartSavings"></div>
+                    <div class="cart-summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="Cart.checkout()" id="checkoutBtn" style="display: none;">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <div id="chatbot-container"></div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+
+    <script>
+        let currentPost = null;
+        let allPosts = [];
+
+
+
+        // Cargar artículo
+        async function loadArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('id');
+
+            if (!postSlug) {
+                showError('No se especificó un artículo');
+                return;
+            }
+
+            const data = await HomeLifeUtils.loadJSON('blog-posts.json');
+            
+            if (!data || !data.posts) {
+                showError('No se pudieron cargar los artículos');
+                return;
+            }
+
+            allPosts = data.posts;
+            currentPost = allPosts.find(p => p.slug === postSlug);
+
+            if (!currentPost) {
+                showError('Artículo no encontrado');
+                return;
+            }
+
+            renderArticle();
+            loadRelatedArticles();
+        }
+
+        // Renderizar artículo
+        function renderArticle() {
+            // Meta información
+            document.title = `${currentPost.title} | HomeLife Blog`;
+            document.getElementById('breadcrumbTitle').textContent = currentPost.title;
+            
+            // Header
+            document.getElementById('articleCategory').textContent = currentPost.category;
+            document.getElementById('articleTitle').textContent = currentPost.title;
+            document.getElementById('authorAvatar').src = currentPost.authorImage;
+            document.getElementById('authorAvatar').alt = currentPost.author;
+            document.getElementById('authorName').textContent = currentPost.author;
+            document.getElementById('publishDate').textContent = formatDate(currentPost.publishDate);
+            document.getElementById('readTime').textContent = currentPost.readTime;
+
+            // Imagen principal
+            document.getElementById('articleImage').src = currentPost.image;
+            document.getElementById('articleImage').alt = currentPost.title;
+
+            // Contenido del artículo
+            const bodyContainer = document.getElementById('articleBody');
+            bodyContainer.innerHTML = currentPost.content.map(block => {
+                switch(block.type) {
+                    case 'paragraph':
+                        return `<p>${block.text}</p>`;
+                    case 'heading':
+                        return `<h2>${block.text}</h2>`;
+                    case 'list':
+                        return `<ul>${block.items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+                    default:
+                        return '';
+                }
+            }).join('');
+
+            // Tags
+            const tagsContainer = document.getElementById('articleTags');
+            tagsContainer.innerHTML = currentPost.tags.map(tag => 
+                `<a href="blog.html" class="article-tag">#${tag}</a>`
+            ).join('');
+        }
+
+        // Cargar artículos relacionados
+        function loadRelatedArticles() {
+            const related = allPosts
+                .filter(p => p.categorySlug === currentPost.categorySlug && p.id !== currentPost.id)
+                .slice(0, 3);
+
+            const container = document.getElementById('relatedArticles');
+
+            if (related.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #6c757d;">No hay artículos relacionados</p>';
+                return;
+            }
+
+            container.innerHTML = related.map(post => `
+                <article class="blog-card">
+                    <a href="blog-articulo.html?id=${post.slug}" class="blog-card-image">
+                        <img src="${post.image}" alt="${post.title}">
+                        <span class="blog-card-category">${post.category}</span>
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span class="blog-date">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                ${formatDate(post.publishDate)}
+                            </span>
+                            <span class="blog-read-time">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                ${post.readTime} min
+                            </span>
+                        </div>
+                        <h3 class="blog-card-title">
+                            <a href="blog-articulo.html?id=${post.slug}">${post.title}</a>
+                        </h3>
+                        <p class="blog-card-excerpt">${post.excerpt}</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-author">
+                                <img src="${post.authorImage}" alt="${post.author}" class="author-avatar">
+                                <span class="author-name">${post.author}</span>
+                            </div>
+                            <a href="blog-articulo.html?id=${post.slug}" class="blog-read-more">
+                                Leer más →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('es-ES', options);
+        }
+
+        // Mostrar error
+        function showError(message) {
+            document.querySelector('.article-header').innerHTML = `
+                <div class="container" style="text-align: center; padding: 100px 20px;">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#dc3545" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                    <h2 style="color: #dc3545; margin: 20px 0;">${message}</h2>
+                    <a href="blog.html" class="btn-primary">Ver Blog</a>
+                </div>
+            `;
+            document.querySelector('.article-content').style.display = 'none';
+            document.querySelector('.related-articles').style.display = 'none';
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponents();
+            await loadArticle();
+        });
+    </script>
+</body>
+</html>

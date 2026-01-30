@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Salud | HomeLife</title>
+    <meta name="description" content="Artículos, guías y consejos sobre salud, equipos médicos y prevención de enfermedades. Información actualizada de expertos.">
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <div id="navbar-container"></div>
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="separator">›</span>
+            <span class="current">Blog</span>
+        </div>
+    </div>
+
+    <!-- ===== HERO DEL BLOG ===== -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="blog-hero-title">Blog de Salud HomeLife</h1>
+            <p class="blog-hero-subtitle">Artículos, guías y consejos de expertos sobre salud y equipos médicos</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO DEL BLOG ===== -->
+    <section class="blog-section section">
+        <div class="container">
+            <div class="blog-layout">
+                
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Búsqueda -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Buscar Artículos</h3>
+                        <div class="blog-search">
+                            <input type="text" id="blogSearchInput" placeholder="Buscar...">
+                            <button onclick="searchBlog()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Categorías -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categorías</h3>
+                        <ul class="category-list" id="blogCategories">
+                            <!-- Se llenan con JavaScript -->
+                        </ul>
+                    </div>
+
+                    <!-- Artículos recientes -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Artículos Recientes</h3>
+                        <div class="recent-posts" id="recentPosts">
+                            <!-- Se llenan con JavaScript -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Contenido Principal -->
+                <main class="blog-main">
+                    <!-- Grid de artículos -->
+                    <div class="blog-grid" id="blogGrid">
+                        <!-- Los artículos se cargan con JavaScript -->
+                    </div>
+
+                    <!-- Mensaje si no hay resultados -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <h3>No se encontraron artículos</h3>
+                        <p>Intenta buscar con otros términos</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL DE CARRITO ===== -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+            <div class="cart-modal-body">
+                <h2>🛒 Mi Carrito</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary" style="display: none;">
+                    <div class="cart-summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span>Envío:</span>
+                        <span id="cartShipping">Gratis</span>
+                    </div>
+                    <div id="cartSavings"></div>
+                    <div class="cart-summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="Cart.checkout()" id="checkoutBtn" style="display: none;">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div id="footer-container"></div>
+
+    <div class="chatbot-container" id="chatbotContainer"></div>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/chatbot.js"></script>
+     <script src="assets/js/navbar.js"></script>
+     <script src="assets/js/components-loader.js"></script>
+
+    <script>
+        let allPosts = [];
+        let filteredPosts = [];
+        let currentCategory = 'all';
+
+
+
+        // Cargar posts del blog
+        async function loadBlogPosts() {
+            const data = await HomeLifeUtils.loadJSON('blog-posts.json');
+            
+            if (!data || !data.posts) {
+                console.error('No se pudieron cargar los posts');
+                return;
+            }
+
+            allPosts = data.posts;
+            filteredPosts = [...allPosts];
+
+            // Renderizar categorías
+            renderCategories(data.categories || []);
+            
+            // Renderizar posts
+            renderBlogPosts();
+            
+            // Renderizar posts recientes
+            renderRecentPosts();
+        }
+
+        // Renderizar categorías
+        function renderCategories(categories) {
+            const container = document.getElementById('blogCategories');
+            
+            let html = `
+                <li>
+                    <a href="#" class="category-link active" onclick="filterByCategory('all'); return false;">
+                        Todas las Categorías
+                        <span class="category-count">${allPosts.length}</span>
+                    </a>
+                </li>
+            `;
+
+            html += categories.map(cat => `
+                <li>
+                    <a href="#" class="category-link" onclick="filterByCategory('${cat.slug}'); return false;">
+                        ${cat.name}
+                        <span class="category-count">${cat.postCount}</span>
+                    </a>
+                </li>
+            `).join('');
+
+            container.innerHTML = html;
+        }
+
+        // Renderizar posts
+        function renderBlogPosts() {
+            const container = document.getElementById('blogGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredPosts.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+
+            container.innerHTML = filteredPosts.map(post => `
+                <article class="blog-card">
+                    <a href="blog-articulo.html?id=${post.slug}" class="blog-card-image">
+                        <img src="${post.image}" alt="${post.title}">
+                        <span class="blog-card-category">${post.category}</span>
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span class="blog-date">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                ${formatDate(post.publishDate)}
+                            </span>
+                            <span class="blog-read-time">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                ${post.readTime} min
+                            </span>
+                        </div>
+                        <h3 class="blog-card-title">
+                            <a href="blog-articulo.html?id=${post.slug}">${post.title}</a>
+                        </h3>
+                        <p class="blog-card-excerpt">${post.excerpt}</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-author">
+                                <img src="${post.authorImage}" alt="${post.author}" class="author-avatar">
+                                <span class="author-name">${post.author}</span>
+                            </div>
+                            <a href="blog-articulo.html?id=${post.slug}" class="blog-read-more">
+                                Leer más →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Renderizar posts recientes
+        function renderRecentPosts() {
+            const container = document.getElementById('recentPosts');
+            const recent = allPosts.slice(0, 4);
+
+            container.innerHTML = recent.map(post => `
+                <a href="blog-articulo.html?id=${post.slug}" class="recent-post">
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="recent-post-info">
+                        <h4>${post.title}</h4>
+                        <span class="recent-post-date">${formatDate(post.publishDate)}</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // Filtrar por categoría
+        function filterByCategory(categorySlug) {
+            currentCategory = categorySlug;
+
+            if (categorySlug === 'all') {
+                filteredPosts = [...allPosts];
+            } else {
+                filteredPosts = allPosts.filter(post => post.categorySlug === categorySlug);
+            }
+
+            // Actualizar links activos
+            document.querySelectorAll('.category-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            renderBlogPosts();
+        }
+
+        // Buscar en blog
+        function searchBlog() {
+            const query = document.getElementById('blogSearchInput').value.toLowerCase();
+
+            if (!query) {
+                filteredPosts = [...allPosts];
+            } else {
+                filteredPosts = allPosts.filter(post => 
+                    post.title.toLowerCase().includes(query) ||
+                    post.excerpt.toLowerCase().includes(query) ||
+                    post.tags.some(tag => tag.toLowerCase().includes(query))
+                );
+            }
+
+            renderBlogPosts();
+        }
+
+        // Formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('es-ES', options);
+        }
+
+        // Buscar al presionar Enter
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('blogSearchInput')?.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBlog();
+                }
+            });
+        });
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadBlogPosts();
+        });
+    </script>
+</body>
+</html>

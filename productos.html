@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Equipos Médicos Certificados | HomeLife</title>
+    <meta name="description" content="Catálogo completo de equipos médicos certificados INVIMA. Tensiómetros, oxímetros, nebulizadores, termómetros y más con envío gratis.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    <link rel="stylesheet" href="assets/css/productos.css">
+    
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+   
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="navbar-container"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="separator">›</span>
+            <span class="current">Productos</span>
+        </div>
+    </div>
+
+    <section class="products-page section">
+        <div class="container">
+            <div class="products-layout">
+                <main class="products-main">
+                    
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <h1 class="products-title">Nuestros Productos</h1>
+                            <p class="products-count"><span id="productCount">0</span> productos encontrados</p>
+                        </div>
+                        
+                        <div class="toolbar-right">
+                            <label for="sortSelect">Ordenar por:</label>
+                            <select id="sortSelect" class="sort-select" onchange="ProductsPage.sortProducts(this.value)">
+                                <option value="featured">Destacados</option>
+                                <option value="name-asc">Nombre A-Z</option>
+                                <option value="name-desc">Nombre Z-A</option>
+                                <option value="price-asc">Precio: Menor a Mayor</option>
+                                <option value="price-desc">Precio: Mayor a Menor</option>
+                                <option value="newest">Más Recientes</option>
+                                <option value="rating">Mejor Valorados</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                    </div>
+
+                    <div class="no-products" id="noProducts" style="display: none;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <h3>No se encontraron productos</h3>
+                        <p>Intenta ajustar los filtros o busca otro término</p>
+                        <button class="btn-primary" onclick="ProductsPage.clearFilters()">Limpiar Filtros</button>
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+            <div class="cart-modal-body">
+                <h2 data-i18n="cart.title">🛒 Mi Carrito</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary" style="display: none;">
+                    <div class="cart-summary-row">
+                        <span data-i18n="cart.subtotal">Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span data-i18n="cart.shipping">Envío:</span>
+                        <span id="cartShipping">Gratis</span>
+                    </div>
+                    <div id="cartSavings"></div>
+                    <div class="cart-summary-row total">
+                        <span data-i18n="cart.total">Total:</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="Cart.checkout()" id="checkoutBtn" style="display: none;" data-i18n="cart.proceed_checkout">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+
+    <div class="chatbot-container" id="chatbotContainer">
+    
+    </div>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/productos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+
+</body>
+</html>

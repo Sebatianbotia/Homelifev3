@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeLife - Best For Your Life | Equipos Médicos Certificados INVIMA</title>
+    <meta name="description" content="Equipos médicos certificados INVIMA. Tensiómetros, oxímetros, nebulizadores y más. Envío gratis en compras superiores a $150.000. +15 años de experiencia.">
+    <meta name="keywords" content="equipos médicos, HomeLife, INVIMA, tensiómetro, oxímetro, nebulizador, termómetro, Colombia">
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    <link rel="stylesheet" href="assets/css/productos.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+</head>
+<body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <svg class="logo-h" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,20 L20,80 M20,50 L80,50 M80,20 L80,80" 
+                          stroke="currentColor" 
+                          stroke-width="8" 
+                          stroke-linecap="round" 
+                          fill="none"
+                          stroke-dasharray="300"
+                          stroke-dashoffset="300">
+                        <animate attributeName="stroke-dashoffset" 
+                                 from="300" 
+                                 to="0" 
+                                 dur="2s" 
+                                 fill="freeze"/>
+                    </path>
+                </svg>
+            </div>
+            <div class="preloader-text">HomeLife</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <div id="header-container"></div>
+    <div id="navbar-container"></div>
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero-slider" id="heroSlider">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=900&fit=crop&auto=format&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">✨ Nueva Línea Medic Life 2026</div>
+                    <h1 class="hero-title">Equipos Médicos de Alta Tecnología</h1>
+                    <p class="hero-description">
+                        Descubre nuestra selección premium de dispositivos médicos con certificación INVIMA. 
+                        Calidad, confiabilidad y tecnología de vanguardia.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="productos.html" class="btn-primary">Explorar Productos</a>
+                        <a href="contacto.html" class="btn-secondary">Cotizar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1600&h=900&fit=crop&auto=format&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">🔥 Ofertas Especiales</div>
+                    <h1 class="hero-title">Hasta 30% de Descuento</h1>
+                    <p class="hero-description">
+                        Aprovecha nuestras promociones exclusivas en equipos médicos certificados. Stock limitado.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="productos.html?ofertas=true" class="btn-primary">Ver Ofertas</a>
+                        <a href="productos.html" class="btn-secondary">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1600&h=900&fit=crop&auto=format&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">✅ Certificación INVIMA</div>
+                    <h1 class="hero-title">100% Certificados y Garantizados</h1>
+                    <p class="hero-description">
+                        Todos nuestros equipos cuentan con registro sanitario INVIMA vigente y garantía extendida de 2 años.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="nosotros.html#certificaciones" class="btn-primary">Verificar Certificados</a>
+                        <a href="nosotros.html" class="btn-secondary">Conocer Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="slider-arrow prev" onclick="SliderSystem.prev()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-arrow next" onclick="SliderSystem.next()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <div class="slider-controls">
+            <span class="slider-dot active" onclick="SliderSystem.goToSlide(0)"></span>
+            <span class="slider-dot" onclick="SliderSystem.goToSlide(1)"></span>
+            <span class="slider-dot" onclick="SliderSystem.goToSlide(2)"></span>
+        </div>
+    </section>
+
+    <section class="why-homelife section">
+        <div class="section-header">
+            <h2 class="section-title">¿Por Qué Elegir HomeLife?</h2>
+            <p class="section-subtitle">
+                Somos líderes en equipos médicos certificados con más de 15 años de experiencia en el sector salud
+            </p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&auto=format&q=80" alt="Calidad Certificada">
+                </div>
+                <h3>Calidad Certificada</h3>
+                <p>Todos nuestros productos cuentan con certificación INVIMA y cumplen estándares internacionales de calidad.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop&auto=format&q=80" alt="Tecnología de Vanguardia">
+                </div>
+                <h3>Tecnología de Vanguardia</h3>
+                <p>Equipos médicos de última generación con la más avanzada tecnología para diagnóstico y tratamiento.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop&auto=format&q=80" alt="Garantía Extendida">
+                </div>
+                <h3>Garantía Extendida</h3>
+                <p>2 años de garantía en todos nuestros productos más servicio técnico especializado incluido.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format&q=80" alt="Asesoría Profesional">
+                </div>
+                <h3>Asesoría Profesional</h3>
+                <p>Equipo de expertos disponibles para asesorarte en la selección del equipo médico ideal para tus necesidades.</p>
+            </div>
+        </div>
+    </section>
+    <section class="afiliados">
+       <h2 class="section-title">Conviértete En Distrubuidor</h2>
+       <p class="section-subtitle">Trabajemos juntos en el bienestar de los colombianos</p>
+        <a href="distribuidores.html" class="distributor-btn">Conoce Más</a>
+    </section>
+
+    <section class="products-section section bg-light" id="productos">
+        <div class="section-header">
+            <h2 class="section-title">Productos Destacados</h2>
+            <p class="section-subtitle">
+                Los equipos médicos más solicitados con certificación INVIMA
+            </p>
+        </div>
+
+        <div class="products-grid" id="featuredProducts">
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="productos.html" class="btn-primary">Ver Todos los Productos</a>
+        </div>
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+            <div class="cart-modal-body">
+                <h2>🛒 Mi Carrito</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary" style="display: none;">
+                    <div class="cart-summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span>Envío:</span>
+                        <span id="cartShipping">Gratis</span>
+                    </div>
+                    <div id="cartSavings"></div>
+                    <div class="cart-summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+                <button class="btn-checkout" onclick="Cart.checkout()" id="checkoutBtn" style="display: none;">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    
+    
+    <div class="chatbot-container" id="chatbotContainer"></div>
+
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+
+    <script src="assets/js/chatbot.js"></script> 
+    <script src="assets/js/components-loader.js"></script>
+    <script>
+
+        function performSearch() {
+            const searchInput = document.getElementById('headerSearchInput');
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `productos.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+
+        document.getElementById('headerSearchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+      
+
+        async function loadFeaturedProducts() {
+            const data = await HomeLifeUtils.loadJSON('products.json');
+            
+            if (!data || !data.products) {
+                console.error('No se pudieron cargar los productos');
+                return;
+            }
+
+            const featured = data.products.filter(p => p.isFeatured).slice(0, 6);
+            const container = document.getElementById('featuredProducts');
+            
+            container.innerHTML = featured.map(product => `
+                <div class="product-card" data-product-id="${product.id}">
+                    ${product.discount > 0 ? `<div class="discount-badge">-${product.discount}%</div>` : ''}
+                    ${product.isNew ? `<div class="new-badge">NUEVO</div>` : ''}
+                    
+                    <div class="product-image-container">
+                        <img src="${product.images[0]}" alt="${product.name}" class="product-image">
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        
+                        <div class="product-rating">
+                            <div class="stars">${'★'.repeat(product.rating)}${'☆'.repeat(5-product.rating)}</div>
+                            <span class="rating-count">(${product.reviewCount})</span>
+                        </div>
+                        
+                        <div class="product-pricing">
+                            ${product.originalPrice ? `<span class="original-price">${HomeLifeUtils.formatPrice(product.originalPrice)}</span>` : ''}
+                            <div class="current-price">${HomeLifeUtils.formatPrice(product.price)}</div>
+                            ${product.originalPrice ? `<div class="savings">Ahorras ${HomeLifeUtils.formatPrice(product.originalPrice - product.price)}</div>` : ''}
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" onclick="addProductToCart('${product.id}')">
+                                Agregar al Carrito
+                            </button>
+                            <a href="producto-detalle.html?id=${product.slug}" class="quick-view-btn" title="Ver detalles">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function addProductToCart(productId) {
+            const data = await HomeLifeUtils.loadJSON('products.json');
+            const product = data.products.find(p => p.id === productId);
+            
+            if (product) {
+                Cart.add(product, 1);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadFeaturedProducts();
+            
+            if (window.SliderSystem) {
+                SliderSystem.init();
+            }
+            
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

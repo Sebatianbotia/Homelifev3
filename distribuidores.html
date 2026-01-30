@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distribuidores | HomeLife</title>
+  <meta name="description" content="Formulario para distribuidores HomeLife." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/distribuidores.css" />
+
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+    <div id="navbar-container"></div>
+    <section class="section">
+        <div class="container">
+        <header class="dist-hero">
+            <h1>¿Deseas ser distribuidor de nuestros productos para tu zona o región?</h1>
+            <p>
+            Dale fuerza a tu negocio con HomeLife, una marca ya posicionada en el sector de la salud.
+            </p>
+        </header>
+
+        <div class="dist-layout">
+            <div class="card">
+            <div class="card-body">
+
+                <form id="distributorsForm" action="#" method="post" autocomplete="on">
+                <div class="form-grid">
+                    <div class="field">
+                    <label for="empresa">Empresa <span class="req">*</span></label>
+                    <input class="control" id="empresa" name="empresa" type="text" required />
+                    </div>
+
+                    <div class="field">
+                    <label for="contacto">Nombre del contacto <span class="req">*</span></label>
+                    <input class="control" id="contacto" name="contacto" type="text" required />
+                    </div>
+
+                    <div class="field">
+                    <label for="celular">Celular <span class="req">*</span></label>
+                    <input class="control" id="celular" name="celular" type="tel" inputmode="tel" required />
+                    </div>
+
+                    <div class="field">
+                    <label for="correo">Correo electrónico <span class="req">*</span></label>
+                    <input class="control" id="correo" name="correo" type="email" required />
+                    </div>
+
+                    <div class="field">
+                    <label for="asunto">Asunto</label>
+                    <input class="control" id="asunto" name="asunto" type="text" />
+                    </div>
+
+                    <div class="field">
+                    <label for="mensaje">Tu mensaje</label>
+                    <textarea class="control" id="mensaje" name="mensaje" placeholder="Cuéntanos tu zona/región, tipo de negocio y cómo te gustaría trabajar con nosotros."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                    <span class="hint">Campos con <b>*</b> son obligatorios.</span>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+
+            <aside class="card">
+            <div class="card-body">
+                <p class="info-text">
+                Nuestros distribuidores son parte clave de nuestro crecimiento y nos complace que cada vez
+                más se unan más personas a este proyecto.
+                </p>
+                <p class="info-text">
+                Estamos interesados en ponernos en contacto con socios entusiastas que deseen
+                comercializar y promover nuestros productos.
+                </p>
+                <p class="info-text">
+                Nuestro portafolio agregará valor a su negocio y a la salud de sus clientes.
+                </p>
+
+                <div style="height:12px;"></div>
+
+                <div class="info-title">Contacto para distribuidores</div>
+                <div class="contact-name">Alejandra Valderrama</div>
+
+                <ul class="info-list">
+                <li class="info-item">
+                    <span class="dot"></span>
+                    <span><b>Email:</b> ventas3@homemedicalgroup.com</span>
+                </li>
+                <li class="info-item">
+                    <span class="dot"></span>
+                    <span><b>Celular:</b> 3003555826</span>
+                </li>
+                </ul>
+            </div>
+            </aside>
+        </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/productos.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+
+
+  <script>
+    document.getElementById('distributorsForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Formulario enviado (demo). Conecta action o fetch() a tu backend.');
+      e.target.reset();
+    });
+
+  </script>
+</body>
+</html>

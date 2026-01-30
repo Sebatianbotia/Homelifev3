@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | HomeLife</title>
+    <meta name="description" content="Accede a tu cuenta HomeLife para ver tus pedidos, información personal y más.">
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <style>
+        .account-page {
+            min-height: 80vh;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .account-container {
+            max-width: 1000px;
+            width: 100%;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .account-sidebar {
+            background: linear-gradient(135deg, var(--medic-turquoise), var(--medic-dark-turquoise));
+            color: var(--white);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .account-sidebar h2 {
+            font-family: var(--font-primary);
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .account-sidebar p {
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .account-sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .account-sidebar li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .account-sidebar li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .account-forms {
+            padding: 60px 40px;
+        }
+
+        .form-tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--medium-gray);
+        }
+
+        .form-tab {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-gray);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .form-tab:hover {
+            color: var(--medic-turquoise);
+        }
+
+        .form-tab.active {
+            color: var(--medic-turquoise);
+        }
+
+        .form-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--medic-turquoise);
+        }
+
+        .form-content {
+            display: none;
+        }
+
+        .form-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .account-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group-account {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group-account label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group-account input {
+            padding: 14px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: var(--font-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .form-group-account input:focus {
+            outline: none;
+            border-color: var(--medic-turquoise);
+            box-shadow: 0 0 0 4px rgba(71, 177, 190, 0.1);
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle button {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: var(--medic-turquoise);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background: var(--medic-turquoise);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--medic-dark-turquoise);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(71, 177, 190, 0.4);
+        }
+
+        .social-login {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .social-login p {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .social-btn:hover {
+            border-color: var(--medic-turquoise);
+            background: var(--light-gray);
+        }
+
+        @media (max-width: 968px) {
+            .account-container {
+                grid-template-columns: 1fr;
+            }
+
+            .account-sidebar {
+                padding: 40px 30px;
+            }
+
+            .account-forms {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .account-page {
+                padding: 40px 15px;
+            }
+
+            .account-sidebar h2 {
+                font-size: 28px;
+            }
+
+            .account-sidebar {
+                padding: 30px 20px;
+            }
+
+            .account-forms {
+                padding: 30px 20px;
+            }
+
+            .form-tab {
+                font-size: 16px;
+                padding: 10px 16px;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TICKER BAR ===== -->
+    <div class="ticker-bar">
+        <div class="ticker-content">
+            <div class="ticker-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                <span>Certificación INVIMA Vigente</span>
+            </div>
+            <div class="ticker-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="3" width="15" height="13"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Envío GRATIS en compras superiores a $150.000</span>
+            </div>
+            <div class="ticker-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                <span>Garantía extendida 2 años</span>
+            </div>
+            <div class="ticker-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="3" width="15" height="13"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Envío GRATIS en compras superiores a $150.000</span>
+            </div>
+        </div>
+        <div class="language-selector">
+            <span class="lang-option active">ES</span>
+            <span class="lang-option">EN</span>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo"><div>HOME<span>LIFE</span></div></a>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Buscar productos...">
+                <button class="search-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="header-actions">
+                <a href="cuenta.html" class="header-action">
+                    <span class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    <span class="action-text">Cuenta</span>
+                </a>
+                <a href="carrito.html" class="header-action">
+                    <span class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </span>
+                    <span class="action-text">Carrito</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== CONTENIDO CUENTA ===== -->
+    <section class="account-page">
+        <div class="account-container">
+            
+            <!-- Sidebar -->
+            <div class="account-sidebar">
+                <h2>Bienvenido a HomeLife</h2>
+                <p>Crea una cuenta o inicia sesión para disfrutar de beneficios exclusivos</p>
+                
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Seguimiento de pedidos
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Historial de compras
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Direcciones guardadas
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Ofertas exclusivas
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Formularios -->
+            <div class="account-forms">
+                <div class="form-tabs">
+                    <button class="form-tab active" onclick="switchFormTab('login')">Iniciar Sesión</button>
+                    <button class="form-tab" onclick="switchFormTab('register')">Registrarse</button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="form-content active">
+                    <form class="account-form" onsubmit="return handleLogin(event)">
+                        <div class="form-group-account">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+
+                        <div class="form-group-account">
+                            <label for="loginPassword">Contraseña</label>
+                            <div class="password-toggle">
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                        </div>
+
+                        <div class="forgot-password">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Iniciar Sesión</button>
+                    </form>
+
+                    <div class="social-login">
+                        <p>O continúa con</p>
+                        <div class="social-buttons">
+                            <button class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#4285F4">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                </svg>
+                                Google
+                            </button>
+                            <button class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Form -->
+                <div id="registerForm" class="form-content">
+                    <form class="account-form" onsubmit="return handleRegister(event)">
+                        <div class="form-group-account">
+                            <label for="registerName">Nombre Completo</label>
+                            <input type="text" id="registerName" required>
+                        </div>
+
+                        <div class="form-group-account">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+
+                        <div class="form-group-account">
+                            <label for="registerPhone">Teléfono</label>
+                            <input type="tel" id="registerPhone" required>
+                        </div>
+
+                        <div class="form-group-account">
+                            <label for="registerPassword">Contraseña</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+
+                        <div class="form-group-account">
+                            <label for="registerPasswordConfirm">Confirmar Contraseña</label>
+                            <input type="password" id="registerPasswordConfirm" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Crear Cuenta</button>
+                    </form>
+
+                    <div class="social-login">
+                        <p>O regístrate con</p>
+                        <div class="social-buttons">
+                            <button class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#4285F4">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                </svg>
+                                Google
+                            </button>
+                            <button class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div id="footer-container"></div>
+
+    <!-- ===== CHATBOT ===== -->
+    <div id="chatbot-container"></div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        async function loadComponents() {
+            try {
+                const footerResponse = await fetch('assets/includes/footer.html');
+                const footerHtml = await footerResponse.text();
+                document.getElementById('footer-container').innerHTML = footerHtml;
+                
+                const chatbotResponse = await fetch('assets/includes/chatbot.html');
+                const chatbotHtml = await chatbotResponse.text();
+                document.getElementById('chatbot-container').innerHTML = chatbotHtml;
+            } catch (error) {
+                console.error('Error cargando componentes:', error);
+            }
+        }
+
+        function switchFormTab(tab) {
+            const tabs = document.querySelectorAll('.form-tab');
+            const contents = document.querySelectorAll('.form-content');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+
+            if (tab === 'login') {
+                tabs[0].classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            console.log('Login:', { email, password });
+            
+            alert('✅ Inicio de sesión exitoso!\n\nBienvenido a HomeLife.');
+            window.location.href = 'index.html';
+            
+            return false;
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const phone = document.getElementById('registerPhone').value;
+            const password = document.getElementById('registerPassword').value;
+            const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+            
+            if (password !== passwordConfirm) {
+                alert('❌ Las contraseñas no coinciden');
+                return false;
+            }
+            
+            console.log('Registro:', { name, email, phone, password });
+            
+            alert('✅ Cuenta creada exitosamente!\n\nBienvenido a HomeLife.');
+            window.location.href = 'index.html';
+            
+            return false;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadComponents);
+    </script>
+</body>
+</html>

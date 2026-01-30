@@ -1,0 +1,658 @@
+/* =====================================================
+   HOMELIFE PREMIUM - RESPONSIVE.CSS
+   Ajustes responsive para todos los dispositivos
+   ===================================================== */
+
+/* ===== BREAKPOINTS =====
+   - Mobile: < 768px
+   - Tablet: 768px - 968px
+   - Desktop: > 968px
+   ======================== */
+
+/* ===== TABLET (768px - 968px) ===== */
+@media (max-width: 968px) {
+    /* Container */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header */
+    .header-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-box {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .header-actions {
+        gap: 15px;
+    }
+
+    /* Hero */
+    .hero-slider {
+        height: 500px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    /* Sections */
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    /* Why HomeLife */
+    .why-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    /* Blog Layout */
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        position: static;
+    }
+
+    /* Product Detail */
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-gallery {
+        position: static;
+    }
+}
+
+/* ===== MOBILE (< 768px) ===== */
+@media (max-width: 768px) {
+    /* Typography */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    /* Ticker Bar */
+    .ticker-bar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .ticker-item {
+        font-size: 12px;
+    }
+
+    .language-selector {
+        position: static;
+        transform: none;
+        margin-left: auto;
+        padding: 3px 10px;
+    }
+
+    /* Header */
+    .main-header {
+        position: relative;
+    }
+
+    .header-container {
+        padding: 15px;
+    }
+
+    .logo div {
+        font-size: 22px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 12px 45px 12px 15px;
+    }
+
+    .search-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .action-icon {
+        font-size: 22px;
+    }
+
+    .action-text {
+        display: none;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    /* Hero Slider */
+    .hero-slider {
+        height: 450px;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-badge {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 15px 30px;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-arrow.prev {
+        left: 15px;
+    }
+
+    .slider-arrow.next {
+        right: 15px;
+    }
+
+    /* Sections */
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    /* Why HomeLife */
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .why-icon {
+        height: 200px;
+    }
+
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .product-card {
+        margin-bottom: 0;
+    }
+
+    .product-name {
+        font-size: 15px;
+        min-height: auto;
+    }
+
+    .current-price {
+        font-size: 20px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+    }
+
+    .quick-view-btn {
+        width: 100%;
+        height: 40px;
+    }
+
+    /* Product Detail */
+    .main-image-container {
+        height: 350px;
+    }
+
+    .thumbnails {
+        gap: 10px;
+    }
+
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+
+    .product-detail-title {
+        font-size: 24px;
+    }
+
+    .detail-current-price {
+        font-size: 36px;
+    }
+
+    .detail-original-price {
+        font-size: 20px;
+    }
+
+    .add-to-cart-section {
+        flex-direction: column;
+    }
+
+    .quantity-selector {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .add-to-cart-btn-large {
+        width: 100%;
+    }
+
+    .tabs-nav {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    /* Productos Page */
+    .products-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toolbar-right {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .sort-select {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .view-toggle {
+        display: none;
+    }
+
+    .products-sidebar {
+        position: static;
+    }
+
+    /* Blog */
+    .blog-hero {
+        padding: 60px 20px;
+    }
+
+    .blog-hero-title {
+        font-size: 28px;
+    }
+
+    .blog-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .blog-card-image {
+        height: 180px;
+    }
+
+    .blog-card-title a {
+        font-size: 18px;
+    }
+
+    /* Blog Article */
+    .article-header {
+        padding: 40px 20px;
+    }
+
+    .article-title {
+        font-size: 24px;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .article-content {
+        padding: 40px 20px;
+    }
+
+    .article-body h2 {
+        font-size: 22px;
+    }
+
+    .article-body p,
+    .article-body ul li {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+    }
+
+    .footer-column ul {
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input {
+        width: 100%;
+    }
+
+    .newsletter-button {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .payment-methods {
+        justify-content: center;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .cart-modal-body {
+        padding: 25px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    /* Forms */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* About Page */
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-hero p {
+        font-size: 18px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .stat-number {
+        font-size: 42px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Utilities */
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    /* Spacing adjustments */
+    .mt-5, .my-5 {
+        margin-top: 2rem;
+    }
+
+    .mb-5, .my-5 {
+        margin-bottom: 2rem;
+    }
+
+    .pt-5, .py-5 {
+        padding-top: 2rem;
+    }
+
+    .pb-5, .py-5 {
+        padding-bottom: 2rem;
+    }
+}
+
+/* ===== SMALL MOBILE (< 480px) ===== */
+@media (max-width: 480px) {
+    /* Hero */
+    .hero-slider {
+        height: 400px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Certifications */
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Product Detail */
+    .detail-current-price {
+        font-size: 28px;
+    }
+
+    .product-detail-title {
+        font-size: 20px;
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-slider {
+        height: 100vh;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .ticker-bar,
+    .main-header,
+    .main-nav,
+    .hero-slider,
+    .breadcrumb,
+    .modal,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    .product-card,
+    .blog-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ajustes para pantallas retina */
+    .logo div {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ===== DARK MODE (OPCIONAL) ===== */
+@media (prefers-color-scheme: dark) {
+    /* Si el usuario prefiere modo oscuro, se pueden agregar estilos aquí */
+    /* Por ahora lo dejamos comentado */
+    /*
+    :root {
+        --white: #1a1a1a;
+        --light-gray: #2a2a2a;
+        --dark-gray: #e0e0e0;
+    }
+    */
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .ticker-content {
+        animation: none;
+    }
+
+    .hero-slide {
+        transition: none;
+    }
+}
+
+/* ===== FIN RESPONSIVE.CSS ===== */
