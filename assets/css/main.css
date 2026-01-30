@@ -726,8 +726,7 @@ img {
     .nav-dropdown{
     left: 0;
     transform: translateY(10px);
-    width: 100%;
-    max-width: 100%;
+    max-width: 110%;
     border-radius: 0 0 12px 12px;
   }
 
@@ -1070,6 +1069,7 @@ img {
 
     .action-icon {
         font-size: 22px;
+        margin-bottom: 0;
     }
 }
 .logo div {
