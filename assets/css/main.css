@@ -723,6 +723,14 @@ img {
 
 @media (max-width: 1024px) {
 
+    .nav-dropdown{
+    left: 0;
+    transform: translateY(10px);
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0 0 12px 12px;
+  }
+
   .has-dropdown {
     display: flex;
     align-items: center;
