@@ -171,9 +171,15 @@ function renderProducts() {
 function productCardHTML(product) {
   const img = product.images?.[0] || '';
   const rating = clampInt(product.rating || 0, 0, 5);
+  const detailUrl = `producto-detalle.html?id=${encodeURIComponent(product.slug || '')}`;
 
   return `
-    <div class="product-card" data-product-id="${escapeHtml(product.id)}">
+    <div class="product-card"
+         data-product-id="${escapeHtml(product.id)}"
+         role="link"
+         tabindex="0"
+         onclick="ProductsPage.openDetail('${escapeAttr(product.slug || '')}')"
+         onkeydown="if(event.key==='Enter'||event.key===' '){ event.preventDefault(); ProductsPage.openDetail('${escapeAttr(product.slug || '')}'); }">
       ${product.discount > 0 ? `<div class="discount-badge">-${product.discount}%</div>` : ''}
       ${product.isNew ? `<div class="new-badge">NUEVO</div>` : ''}
 
@@ -197,12 +203,15 @@ function productCardHTML(product) {
         </div>
 
         <div class="product-actions">
-          <button class="add-to-cart-btn" onclick="ProductsPage.addToCart('${escapeAttr(product.id)}')">
+          <button class="add-to-cart-btn"
+                  onclick="event.stopPropagation(); ProductsPage.addToCart('${escapeAttr(product.id)}')">
             Agregar al Carrito
           </button>
 
-          <a href="producto-detalle.html?id=${encodeURIComponent(product.slug || '')}"
-             class="quick-view-btn" title="Ver detalles">
+          <a href="${detailUrl}"
+             class="quick-view-btn"
+             title="Ver detalles"
+             onclick="event.stopPropagation();">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
@@ -213,6 +222,7 @@ function productCardHTML(product) {
     </div>
   `;
 }
+
 
 function renderPagination() {
   const container = document.getElementById('pagination');
@@ -503,9 +513,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('productos.html')) initProductsPage();
 });
 
+function openDetail(slug) {
+  const s = String(slug || '').trim();
+  if (!s) return;
+  window.location.href = `producto-detalle.html?id=${encodeURIComponent(s)}`;
+}
+
 window.ProductsPage = {
   sortProducts,
   goToPage,
   addToCart,
+  openDetail,
   getState: () => ({ ...ProductsState })
 };
