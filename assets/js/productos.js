@@ -1,23 +1,21 @@
-/* =====================================================
-   HOMELIFE PREMIUM - PRODUCTOS.JS (LIMPIO ~200 líneas)
-   - Carga products.json
-   - Filtro por URL: productos.html?cat=slug
-   - Búsqueda opcional: ?search=texto
-   - Ordenamiento + paginación
-   - Render grid
-   ===================================================== */
-
 const ProductsState = {
   allProducts: [],
   filteredProducts: [],
   displayedProducts: [],
   categories: [],
+  brands: [],
   currentPage: 1,
   productsPerPage: 12,
   currentSort: 'featured',
   filters: {
-    category: null,     // string slug (o null)
-    searchQuery: ''     // string
+    categories: [],     
+    brands: [],       
+    searchQuery: '',
+    priceMin: null,
+    priceMax: null,
+    onlyNew: false,
+    onlyDiscount: false,
+    onlyStock: false
   }
 };
 
@@ -25,6 +23,10 @@ async function initProductsPage() {
   try {
     await loadProducts();
     readFiltersFromUrl();
+
+    renderFiltersUI();
+    bindFiltersEvents();
+
     applyFilters();
     sortProducts(ProductsState.currentSort, { render: false });
     renderProducts();
@@ -40,37 +42,61 @@ async function loadProducts() {
 
   ProductsState.allProducts = data.products;
   ProductsState.categories = Array.isArray(data.categories) ? data.categories : [];
+
+  const set = new Set(
+    ProductsState.allProducts
+      .map(p => normalizeSlug(p.brand || ''))
+      .filter(Boolean)
+  );
+  ProductsState.brands = Array.from(set).sort((a,b) => a.localeCompare(b));
 }
 
 function readFiltersFromUrl() {
   const params = new URLSearchParams(window.location.search);
 
-  // Solo se usa cat (se mantiene compat con categoria)
   const cat = params.get('cat') || params.get('categoria');
   const search = params.get('search') || '';
 
-  ProductsState.filters.category = cat ? normalizeSlug(cat) : null;
+  ProductsState.filters.categories = cat ? [normalizeSlug(cat)] : [];
   ProductsState.filters.searchQuery = String(search || '').trim();
 }
 
 function applyFilters() {
-  const { category, searchQuery } = ProductsState.filters;
+  const f = ProductsState.filters;
 
   let filtered = [...ProductsState.allProducts];
-
-  if (category) {
-    filtered = filtered.filter(p => normalizeSlug(p.categorySlug) === category);
+  if (f.categories.length > 0) {
+    const set = new Set(f.categories.map(normalizeSlug));
+    filtered = filtered.filter(p => set.has(normalizeSlug(p.categorySlug)));
   }
 
-  if (searchQuery) {
-    const q = searchQuery.toLowerCase();
+  if (f.brands.length > 0) {
+    const set = new Set(f.brands.map(normalizeSlug));
+    filtered = filtered.filter(p => set.has(normalizeSlug(p.brand)));
+  }
+
+  if (typeof f.priceMin === 'number') {
+    filtered = filtered.filter(p => (p.price || 0) >= f.priceMin);
+  }
+  if (typeof f.priceMax === 'number') {
+    filtered = filtered.filter(p => (p.price || 0) <= f.priceMax);
+  }
+
+  if (f.onlyNew) filtered = filtered.filter(p => !!p.isNew);
+  if (f.onlyDiscount) filtered = filtered.filter(p => (p.discount || 0) > 0);
+  if (f.onlyStock) filtered = filtered.filter(p => !!p.inStock);
+
+  if (f.searchQuery) {
+    const q = f.searchQuery.toLowerCase();
     filtered = filtered.filter(p => {
       const name = (p.name || '').toLowerCase();
       const catName = (p.category || '').toLowerCase();
       const tags = Array.isArray(p.tags) ? p.tags : [];
+      const brand = (p.brand || '').toLowerCase();
       return (
         name.includes(q) ||
         catName.includes(q) ||
+        brand.includes(q) ||
         tags.some(t => String(t).toLowerCase().includes(q))
       );
     });
@@ -139,7 +165,6 @@ function renderProducts() {
   grid.innerHTML = ProductsState.displayedProducts.map(p => productCardHTML(p)).join('');
   renderPagination();
 
-  // opcional: scroll al grid al cambiar página/orden
   grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -248,9 +273,195 @@ async function addToCart(productId) {
 function updateCounts() {
   const countEl = document.getElementById('productCount');
   if (countEl) countEl.textContent = ProductsState.filteredProducts.length;
+
+  const catAllCount = document.getElementById('catAllCount');
+  if (catAllCount) catAllCount.textContent = ProductsState.allProducts.length;
 }
 
-/* ===== Helpers ===== */
+function renderFiltersUI() {
+  const categoriesList = document.getElementById('categoriesList');
+  if (categoriesList) {
+    const countsByCat = countBy(ProductsState.allProducts, p => normalizeSlug(p.categorySlug));
+
+    categoriesList.innerHTML = ProductsState.categories.map(c => {
+      const slug = normalizeSlug(c.slug);
+      const count = countsByCat.get(slug) || 0;
+      return `
+        <label class="filter-check">
+          <input type="checkbox" class="cat-item" value="${escapeAttr(slug)}">
+          <span>${escapeHtml(c.name)}</span>
+          <span class="filter-badge">${count}</span>
+        </label>
+      `;
+    }).join('');
+  }
+
+  const brandsList = document.getElementById('brandsList');
+  if (brandsList) {
+    const countsByBrand = countBy(ProductsState.allProducts, p => normalizeSlug(p.brand));
+
+    brandsList.innerHTML = ProductsState.brands.map(b => {
+      const count = countsByBrand.get(b) || 0;
+      const label = b ? (b.charAt(0).toUpperCase() + b.slice(1)) : 'Sin marca';
+      return `
+        <label class="filter-check">
+          <input type="checkbox" class="brand-item" value="${escapeAttr(b)}">
+          <span>${escapeHtml(label)}</span>
+          <span class="filter-badge">${count}</span>
+        </label>
+      `;
+    }).join('');
+  }
+
+  syncFiltersUIFromState();
+  updateCounts();
+}
+
+function bindFiltersEvents() {
+  const catAll = document.getElementById('catAll');
+  const catItems = () => Array.from(document.querySelectorAll('.cat-item'));
+
+  if (catAll) {
+    catAll.addEventListener('change', () => {
+      if (catAll.checked) {
+        ProductsState.filters.categories = [];
+        catItems().forEach(i => (i.checked = false));
+        applyAndRender();
+      }
+    });
+  }
+
+  catItems().forEach(cb => {
+    cb.addEventListener('change', () => {
+      const selected = catItems().filter(x => x.checked).map(x => normalizeSlug(x.value));
+      ProductsState.filters.categories = selected;
+      if (catAll) catAll.checked = selected.length === 0;
+      applyAndRender();
+    });
+  });
+
+  const brandItems = Array.from(document.querySelectorAll('.brand-item'));
+  brandItems.forEach(cb => {
+    cb.addEventListener('change', () => {
+      const selected = brandItems.filter(x => x.checked).map(x => normalizeSlug(x.value));
+      ProductsState.filters.brands = selected;
+      applyAndRender();
+    });
+  });
+
+  const condNew = document.getElementById('condNew');
+  const condDiscount = document.getElementById('condDiscount');
+  const condStock = document.getElementById('condStock');
+
+  if (condNew) condNew.addEventListener('change', () => { ProductsState.filters.onlyNew = condNew.checked; applyAndRender(); });
+  if (condDiscount) condDiscount.addEventListener('change', () => { ProductsState.filters.onlyDiscount = condDiscount.checked; applyAndRender(); });
+  if (condStock) condStock.addEventListener('change', () => { ProductsState.filters.onlyStock = condStock.checked; applyAndRender(); });
+
+  const priceMin = document.getElementById('priceMin');
+  const priceMax = document.getElementById('priceMax');
+  const applyPriceBtn = document.getElementById('applyPriceBtn');
+
+  const applyPrice = () => {
+    const min = toNumberOrNull(priceMin?.value);
+    const max = toNumberOrNull(priceMax?.value);
+
+    ProductsState.filters.priceMin = typeof min === 'number' ? min : null;
+    ProductsState.filters.priceMax = typeof max === 'number' ? max : null;
+
+    applyAndRender();
+  };
+
+  if (applyPriceBtn) applyPriceBtn.addEventListener('click', applyPrice);
+  if (priceMin) priceMin.addEventListener('keydown', (e) => { if (e.key === 'Enter') applyPrice(); });
+  if (priceMax) priceMax.addEventListener('keydown', (e) => { if (e.key === 'Enter') applyPrice(); });
+
+  const clearBtn = document.getElementById('clearFiltersBtn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      ProductsState.filters.categories = [];
+      ProductsState.filters.brands = [];
+      ProductsState.filters.priceMin = null;
+      ProductsState.filters.priceMax = null;
+      ProductsState.filters.onlyNew = false;
+      ProductsState.filters.onlyDiscount = false;
+      ProductsState.filters.onlyStock = false;
+
+      if (priceMin) priceMin.value = '';
+      if (priceMax) priceMax.value = '';
+      if (condNew) condNew.checked = false;
+      if (condDiscount) condDiscount.checked = false;
+      if (condStock) condStock.checked = false;
+
+      document.querySelectorAll('.cat-item, .brand-item').forEach(i => (i.checked = false));
+      if (catAll) catAll.checked = true;
+
+      applyAndRender();
+    });
+  }
+
+  const filtersPanel = document.getElementById('filtersPanel');
+  const overlay = document.getElementById('filtersOverlay');
+  const openBtn = document.getElementById('openFiltersBtn');
+  const closeBtn = document.getElementById('closeFiltersBtn');
+
+  const closeFilters = () => {
+    filtersPanel?.classList.remove('is-open');
+    overlay?.classList.remove('is-open');
+    overlay?.setAttribute('aria-hidden', 'true');
+  };
+
+  const openFilters = () => {
+    filtersPanel?.classList.add('is-open');
+    overlay?.classList.add('is-open');
+    overlay?.setAttribute('aria-hidden', 'false');
+  };
+
+  if (openBtn) openBtn.addEventListener('click', openFilters);
+  if (closeBtn) closeBtn.addEventListener('click', closeFilters);
+  if (overlay) overlay.addEventListener('click', closeFilters);
+
+  window.addEventListener('resize', () => {
+    if (!window.matchMedia('(max-width: 968px)').matches) closeFilters();
+  });
+}
+
+function syncFiltersUIFromState() {
+  const f = ProductsState.filters;
+
+  const catAll = document.getElementById('catAll');
+  const catItems = Array.from(document.querySelectorAll('.cat-item'));
+
+  catItems.forEach(cb => {
+    cb.checked = f.categories.includes(normalizeSlug(cb.value));
+  });
+  if (catAll) catAll.checked = f.categories.length === 0;
+
+  const brandItems = Array.from(document.querySelectorAll('.brand-item'));
+  brandItems.forEach(cb => {
+    cb.checked = f.brands.includes(normalizeSlug(cb.value));
+  });
+
+  const condNew = document.getElementById('condNew');
+  const condDiscount = document.getElementById('condDiscount');
+  const condStock = document.getElementById('condStock');
+
+  if (condNew) condNew.checked = !!f.onlyNew;
+  if (condDiscount) condDiscount.checked = !!f.onlyDiscount;
+  if (condStock) condStock.checked = !!f.onlyStock;
+
+  const priceMin = document.getElementById('priceMin');
+  const priceMax = document.getElementById('priceMax');
+  if (priceMin) priceMin.value = typeof f.priceMin === 'number' ? String(f.priceMin) : '';
+  if (priceMax) priceMax.value = typeof f.priceMax === 'number' ? String(f.priceMax) : '';
+}
+
+function applyAndRender() {
+  applyFilters();
+  sortProducts(ProductsState.currentSort, { render: false });
+  renderProducts();
+  updateCounts();
+}
+
 function normalizeSlug(v) {
   return String(v || '').trim().toLowerCase();
 }
@@ -274,12 +485,24 @@ function escapeAttr(str) {
   return escapeHtml(str).replaceAll('`', '&#96;');
 }
 
-/* ===== Boot ===== */
+function toNumberOrNull(v) {
+  const n = Number(String(v || '').trim());
+  return Number.isFinite(n) ? n : null;
+}
+
+function countBy(arr, keyFn) {
+  const map = new Map();
+  for (const item of arr) {
+    const k = keyFn(item);
+    map.set(k, (map.get(k) || 0) + 1);
+  }
+  return map;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('productos.html')) initProductsPage();
 });
 
-/* ===== Public API ===== */
 window.ProductsPage = {
   sortProducts,
   goToPage,

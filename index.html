@@ -128,6 +128,21 @@
             <span class="slider-dot" onclick="SliderSystem.goToSlide(2)"></span>
         </div>
     </section>
+    <section class="products-section section bg-light" id="productos">
+        <div class="section-header">
+            <h2 class="section-title">Productos Destacados</h2>
+            <p class="section-subtitle">
+                Los equipos médicos más solicitados con certificación INVIMA
+            </p>
+        </div>
+
+        <div class="products-grid" id="featuredProducts">
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="productos.html" class="btn-primary">Ver Todos los Productos</a>
+        </div>
+    </section>
 
     <section class="why-homelife section">
         <div class="section-header">
@@ -177,25 +192,96 @@
         <a href="distribuidores.html" class="distributor-btn">Conoce Más</a>
     </section>
 
-    <section class="products-section section bg-light" id="productos">
-        <div class="section-header">
-            <h2 class="section-title">Productos Destacados</h2>
-            <p class="section-subtitle">
-                Los equipos médicos más solicitados con certificación INVIMA
-            </p>
+    <section class="media-section section" id="videos">
+    <div class="section-header">
+        <h2 class="section-title">Guia Detallada Del Glucometro</h2>
+    </div>
+
+    <div class="container">
+        <div class="media-card">
+        <div class="video-embed youtube-embed">
+            <iframe
+            src="https://www.youtube.com/embed/J0dU2emMaBY?si=oMXlpJ6MWyLRYxiX" 
+            title="HomeLife - Video YouTube"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+            </iframe>
+        </div>
         </div>
 
-        <div class="products-grid" id="featuredProducts">
+        <div class="section-header" style="margin-top: 60px;">
+        <h2 class="section-title">TikTok</h2>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="productos.html" class="btn-primary">Ver Todos los Productos</a>
+        <div class="tiktok-grid">
+
+        <div class="media-card tiktok-card">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7602365941867154709"
+            data-video-id="7602365941867154709" style="max-width: 100%; min-width: 100%;">
+            <section></section>
+            </blockquote>
+        </div>
+
+        <div class="media-card tiktok-card">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7595249751163931911"
+            data-video-id="7595249751163931911" style="max-width: 100%; min-width: 100%;">
+            <section></section>
+            </blockquote>
+        </div>
+
+        <div class="media-card tiktok-card">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7589885239179218197"
+            data-video-id="7589885239179218197" style="max-width: 100%; min-width: 100%;">
+            <section></section>
+            </blockquote>
+        </div>
+
+        <div class="media-card tiktok-card">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7578922992126725387"
+            data-video-id="7578922992126725387" style="max-width: 100%; min-width: 100%;">
+            <section></section>
+            </blockquote>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="payments-section">
+        <div class="container">
+            <h2 class="payments-title">
+            Pagos <strong>CONFIABLES</strong> a través de <span class="payu">PayU</span>
+            </h2>
+
+            <div class="payments-logos">
+            <!-- Tarjetas -->
+            <img src="assets/images/pagos/visa.png" alt="Visa">
+            <img src="assets/images/pagos/mastercard.png" alt="Mastercard">
+            <img src="assets/images/pagos/amex.png" alt="American Express">
+            <img src="assets/images/pagos/dirners.png" alt="Diners Club">
+
+            <!-- Bancos / botones -->
+            <img src="assets/images/pagos/pse.png" alt="PSE">
+            <img src="assets/images/pagos/via.png" alt="Vía Baloto">
+            <img src="assets/images/pagos/baloto.png" alt="Baloto">
+            <img src="assets/images/pagos/efecty.png" alt="Efecty">
+
+            <!-- Nuevos -->
+            <img src="assets/images/pagos/nequi.png" alt="Nequi">
+            <img src="assets/images/pagos/daviplata.png" alt="Daviplata">
+            <img src="assets/images/pagos/llaves.png" alt="Llaves">
+            </div>
         </div>
     </section>
 
-    <div id="cartModal" class="modal">
-        <div class="modal-content cart-modal-content">
-            <button class="modal-close" onclick="Cart.closeModal()">×</button>
+
+
+
+
+
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal-content">
+        <button class="modal-close" onclick="Cart.closeModal()">×</button>
             <div class="cart-modal-body">
                 <h2>🛒 Mi Carrito</h2>
                 <div id="cartItems" class="cart-items"></div>
@@ -220,14 +306,11 @@
             </div>
         </div>
     </div>
-
+    
     <div id="footer-container"></div>
-
-    
-    
     <div class="chatbot-container" id="chatbotContainer"></div>
-
-
+    
+    
     <!-- ===== SCRIPTS ===== -->
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/language.js"></script>
@@ -236,9 +319,9 @@
     <script src="assets/js/header.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/navbar.js"></script>
-
     <script src="assets/js/chatbot.js"></script> 
     <script src="assets/js/components-loader.js"></script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
     <script>
 
         function performSearch() {

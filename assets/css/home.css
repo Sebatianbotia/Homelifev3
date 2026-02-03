@@ -516,7 +516,93 @@
     color: var(--text-gray);
 }
 
-/* ===== RESPONSIVE ===== */
+.media-section{
+  background: var(--white);
+}
+
+.media-card{
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.video-embed{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #0f1830;
+}
+
+.video-embed iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tiktok-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.tiktok-card{
+  padding: 10px;
+}
+
+.tiktok-card .tiktok-embed{
+  margin: 0 !important;
+}
+
+@media (max-width: 1200px){
+  .tiktok-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px){
+  .tiktok-grid{ grid-template-columns: 1fr; }
+}
+
+
+.payments-section {
+  padding: 60px 0;
+  background: var(--white);
+  border-top: 1px solid var(--medium-gray);
+}
+
+.payments-title {
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 35px;
+}
+
+.payments-title strong {
+  font-weight: 800;
+}
+
+.payments-title .payu {
+  color: #6bbf4e; 
+  font-weight: 800;
+}
+
+.payments-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.payments-logos img {
+  max-height: 55px;
+  width: auto;
+}
+
 @media (max-width: 968px) {
     .hero-title {
         font-size: 42px;
@@ -574,6 +660,22 @@
     .why-grid {
         grid-template-columns: 1fr;
     }
+
+     .payments-title {
+    font-size: 22px;
+    }
+
+    .payments-logos {
+        gap: 20px;
+    }
+
+    .payments-logos img {
+        max-height: 45px;
+    }
 }
+
+
+
+
 
 /* ===== FIN HOME.CSS ===== */

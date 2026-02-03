@@ -30,50 +30,116 @@
         </div>
     </div>
 
-    <section class="products-page section">
-        <div class="container">
-            <div class="products-layout">
-                <main class="products-main">
-                    
-                    <div class="products-toolbar">
-                        <div class="toolbar-left">
-                            <h1 class="products-title">Nuestros Productos</h1>
-                            <p class="products-count"><span id="productCount">0</span> productos encontrados</p>
-                        </div>
-                        
-                        <div class="toolbar-right">
-                            <label for="sortSelect">Ordenar por:</label>
-                            <select id="sortSelect" class="sort-select" onchange="ProductsPage.sortProducts(this.value)">
-                                <option value="featured">Destacados</option>
-                                <option value="name-asc">Nombre A-Z</option>
-                                <option value="name-desc">Nombre Z-A</option>
-                                <option value="price-asc">Precio: Menor a Mayor</option>
-                                <option value="price-desc">Precio: Mayor a Menor</option>
-                                <option value="newest">Más Recientes</option>
-                                <option value="rating">Mejor Valorados</option>
-                            </select>
-                        </div>
-                    </div>
+   <section class="products-page section">
+  <div class="container">
+    <div class="products-layout">
 
-                    <div class="products-grid" id="productsGrid">
-                    </div>
+      <aside class="products-filters" id="filtersPanel" aria-label="Filtros de productos">
+        <div class="filters-card">
+          <div class="filters-header">
+            <h3 class="filters-title">Filtros</h3>
 
-                    <div class="no-products" id="noProducts" style="display: none;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <h3>No se encontraron productos</h3>
-                        <p>Intenta ajustar los filtros o busca otro término</p>
-                        <button class="btn-primary" onclick="ProductsPage.clearFilters()">Limpiar Filtros</button>
-                    </div>
+            <button class="filters-close" type="button" id="closeFiltersBtn" aria-label="Cerrar filtros">
+              ×
+            </button>
+          </div>
 
-                    <div class="pagination" id="pagination">
-                    </div>
-                </main>
+          <div class="filter-block">
+            <h4 class="filter-title">Filtrar por Categoría</h4>
+
+            <label class="filter-check">
+              <input type="checkbox" id="catAll" checked>
+              <span>Todas las Categorías</span>
+              <span class="filter-badge" id="catAllCount">0</span>
+            </label>
+
+            <div class="filter-list" id="categoriesList">
             </div>
+          </div>
+
+          <div class="filter-block">
+            <h4 class="filter-title">Precio</h4>
+
+            <div class="price-row">
+              <input class="price-input" type="number" inputmode="numeric" id="priceMin" placeholder="Min">
+              <span class="price-sep">-</span>
+              <input class="price-input" type="number" inputmode="numeric" id="priceMax" placeholder="Max">
+            </div>
+
+            <button class="filter-apply" type="button" id="applyPriceBtn">Aplicar</button>
+          </div>
+
+          <div class="filter-block">
+            <h4 class="filter-title">Condiciones</h4>
+
+            <label class="filter-check">
+              <input type="checkbox" id="condNew">
+              <span>Productos Nuevos</span>
+            </label>
+
+            <label class="filter-check">
+              <input type="checkbox" id="condDiscount">
+              <span>Con Descuento</span>
+            </label>
+
+            <label class="filter-check">
+              <input type="checkbox" id="condStock">
+              <span>En Stock</span>
+            </label>
+          </div>
+
+          <div class="filter-block">
+            <h4 class="filter-title">Marca</h4>
+            <div class="filter-list" id="brandsList">
+            </div>
+          </div>
+
+          <button class="filters-clear" type="button" id="clearFiltersBtn">
+            Limpiar Filtros
+          </button>
         </div>
-    </section>
+      </aside>
+
+      <main class="products-main">
+
+        <div class="products-toolbar">
+          <div class="toolbar-left">
+            <h1 class="products-title">Nuestros Productos</h1>
+            <p class="products-count"><span id="productCount">0</span> productos encontrados</p>
+          </div>
+
+          <div class="toolbar-right">
+            <button class="filters-toggle" type="button" id="openFiltersBtn">
+              Filtros
+            </button>
+
+            <label for="sortSelect">Ordenar por:</label>
+            <select id="sortSelect" class="sort-select" onchange="ProductsPage.sortProducts(this.value)">
+              <option value="featured">Destacados</option>
+              <option value="name-asc">Nombre A-Z</option>
+              <option value="name-desc">Nombre Z-A</option>
+              <option value="price-asc">Precio: Menor a Mayor</option>
+              <option value="price-desc">Precio: Mayor a Menor</option>
+              <option value="newest">Más Recientes</option>
+              <option value="rating">Mejor Valorados</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="no-products" id="noProducts" style="display:none;">
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </main>
+
+      <div class="filters-overlay" id="filtersOverlay" aria-hidden="true"></div>
+
+    </div>
+  </div>
+</section>
+
 
     <div id="cartModal" class="modal">
         <div class="modal-content cart-modal-content">

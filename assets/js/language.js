@@ -204,7 +204,52 @@ function detectBrowserLanguage() {
     return 'es'; // Default
 }
 
-// ===== INICIALIZAR SISTEMA DE IDIOMA =====
+
+
+function initLanguageDropdown() {
+  const root = document.getElementById('langSelector');
+  if (!root) return;
+
+  const trigger = root.querySelector('.lang-trigger');
+  const options = root.querySelectorAll('.lang-option');
+
+  const syncActive = () => {
+    options.forEach(opt =>
+      opt.classList.toggle('active', opt.dataset.lang === currentLanguage)
+    );
+  };
+
+  // Abrir / cerrar
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    root.classList.toggle('is-open');
+    trigger.setAttribute(
+      'aria-expanded',
+      root.classList.contains('is-open') ? 'true' : 'false'
+    );
+  });
+
+  // Seleccionar idioma
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      changeLanguage(option.dataset.lang);
+      root.classList.remove('is-open');
+      syncActive();
+    });
+  });
+
+  // Cerrar al hacer click afuera
+  document.addEventListener('click', () => {
+    root.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Sincronizar al iniciar y cuando cambie idioma
+  syncActive();
+  document.addEventListener('languageChanged', syncActive);
+}
+
+
 async function initLanguageSystem() {
     console.log('🚀 Inicializando sistema de idiomas...');
     
@@ -217,9 +262,13 @@ async function initLanguageSystem() {
         localStorage.setItem('homelife_language', currentLanguage);
         console.log('🌐 Idioma detectado del navegador:', currentLanguage);
     }
+
+
+    // Nuevo: inicializar dropdown
     
     // Inicializar selector de idioma
     initLanguageSelector();
+    initLanguageDropdown();
     
     // Traducir página inicial
     translatePage();
@@ -227,6 +276,7 @@ async function initLanguageSystem() {
     console.log('✅ Sistema de idiomas inicializado. Idioma actual:', currentLanguage);
     return true;
 }
+
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLanguageSystem);

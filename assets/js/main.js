@@ -3,7 +3,6 @@
    Inicialización y coordinación general de la aplicación
    ===================================================== */
 
-// ===== CONFIGURACIÓN GLOBAL =====
 const APP_CONFIG = {
     name: 'HomeLife',
     version: '1.0.0',
@@ -12,7 +11,6 @@ const APP_CONFIG = {
     componentsPath: 'assets/includes/'
 };
 
-// ===== ESTADO DE LA APLICACIÓN =====
 const AppState = {
     initialized: false,
     componentsLoaded: false,
@@ -21,7 +19,6 @@ const AppState = {
     user: null
 };
 
-// ===== INICIALIZAR APLICACIÓN =====
 async function initApp() {
     if (AppState.initialized) {
         console.warn('La aplicación ya está inicializada');
