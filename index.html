@@ -216,33 +216,33 @@
 
         <div class="tiktok-grid">
 
-        <div class="media-card tiktok-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7602365941867154709"
-            data-video-id="7602365941867154709" style="max-width: 100%; min-width: 100%;">
-            <section></section>
-            </blockquote>
-        </div>
+            <div class="media-card tiktok-card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7602365941867154709"
+                data-video-id="7602365941867154709" style="max-width: 100%; min-width: 100%;">
+                <section></section>
+                </blockquote>
+            </div>
 
-        <div class="media-card tiktok-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7595249751163931911"
-            data-video-id="7595249751163931911" style="max-width: 100%; min-width: 100%;">
-            <section></section>
-            </blockquote>
-        </div>
+            <div class="media-card tiktok-card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7595249751163931911"
+                data-video-id="7595249751163931911" style="max-width: 100%; min-width: 100%;">
+                <section></section>
+                </blockquote>
+            </div>
 
-        <div class="media-card tiktok-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7589885239179218197"
-            data-video-id="7589885239179218197" style="max-width: 100%; min-width: 100%;">
-            <section></section>
-            </blockquote>
-        </div>
+            <div class="media-card tiktok-card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7589885239179218197"
+                data-video-id="7589885239179218197" style="max-width: 100%; min-width: 100%;">
+                <section></section>
+                </blockquote>
+            </div>
 
-        <div class="media-card tiktok-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7578922992126725387"
-            data-video-id="7578922992126725387" style="max-width: 100%; min-width: 100%;">
-            <section></section>
-            </blockquote>
-        </div>
+            <div class="media-card tiktok-card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7578922992126725387"
+                data-video-id="7578922992126725387" style="max-width: 100%; min-width: 100%;">
+                <section></section>
+                </blockquote>
+            </div>
         </div>
     </div>
     </section>
@@ -311,7 +311,6 @@
     <div class="chatbot-container" id="chatbotContainer"></div>
     
     
-    <!-- ===== SCRIPTS ===== -->
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/language.js"></script>
     <script src="assets/js/cart.js"></script>
@@ -352,34 +351,44 @@
             const container = document.getElementById('featuredProducts');
             
             container.innerHTML = featured.map(product => `
-                <div class="product-card" data-product-id="${product.id}">
+                <div class="product-card"
+                    data-product-id="${product.id}"
+                    role="link"
+                    tabindex="0"
+                    onclick="openFeaturedDetail('${String(product.slug || '').replaceAll("'", "\\'")}')"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){ event.preventDefault(); openFeaturedDetail('${String(product.slug || '').replaceAll("'", "\\'")}'); }">
+
                     ${product.discount > 0 ? `<div class="discount-badge">-${product.discount}%</div>` : ''}
                     ${product.isNew ? `<div class="new-badge">NUEVO</div>` : ''}
-                    
+
                     <div class="product-image-container">
                         <img src="${product.images[0]}" alt="${product.name}" class="product-image">
                     </div>
-                    
+
                     <div class="product-info">
                         <div class="product-category">${product.category}</div>
                         <h3 class="product-name">${product.name}</h3>
-                        
+
                         <div class="product-rating">
                             <div class="stars">${'★'.repeat(product.rating)}${'☆'.repeat(5-product.rating)}</div>
                             <span class="rating-count">(${product.reviewCount})</span>
                         </div>
-                        
+
                         <div class="product-pricing">
                             ${product.originalPrice ? `<span class="original-price">${HomeLifeUtils.formatPrice(product.originalPrice)}</span>` : ''}
                             <div class="current-price">${HomeLifeUtils.formatPrice(product.price)}</div>
                             ${product.originalPrice ? `<div class="savings">Ahorras ${HomeLifeUtils.formatPrice(product.originalPrice - product.price)}</div>` : ''}
                         </div>
-                        
+
                         <div class="product-actions">
-                            <button class="add-to-cart-btn" onclick="addProductToCart('${product.id}')">
+                            <button class="add-to-cart-btn"
+                                    onclick="event.stopPropagation(); addProductToCart('${product.id}')">
                                 Agregar al Carrito
                             </button>
-                            <a href="producto-detalle.html?id=${product.slug}" class="quick-view-btn" title="Ver detalles">
+
+                            <a href="producto-detalle.html?id=${encodeURIComponent(product.slug || '')}"
+                                class="quick-view-btn" title="Ver detalles"
+                                onclick="event.stopPropagation();">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -388,7 +397,7 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+                `).join('');
         }
 
         async function addProductToCart(productId) {
@@ -399,6 +408,12 @@
                 Cart.add(product, 1);
             }
         }
+        
+        function openFeaturedDetail(slug) {
+                const s = String(slug || '').trim();
+                if (!s) return;
+                window.location.href = `producto-detalle.html?id=${encodeURIComponent(s)}`;
+        }   
 
         document.addEventListener('DOMContentLoaded', async function() {
             await loadFeaturedProducts();
