@@ -24,8 +24,6 @@
     <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
 </head>
 <body>
-
-    <!-- ===== PRELOADER ===== -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
@@ -52,6 +50,7 @@
 
     <div id="header-container"></div>
     <div id="navbar-container"></div>
+    
     <!-- ===== HERO SLIDER ===== -->
     <section class="hero-slider" id="heroSlider">
         
@@ -128,6 +127,59 @@
             <span class="slider-dot" onclick="SliderSystem.goToSlide(2)"></span>
         </div>
     </section>
+
+    <section class="trust-banner">
+        <div class="trust-container">
+            <div class="trust-badge-item">
+                <div class="trust-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Certificados INVIMA</strong>
+                    <span>100% Garantizados</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Pago Seguro</strong>
+                    <span>PayU Colombia</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Envío Express</strong>
+                    <span>Gratis desde $150.000</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Soporte 24/7</strong>
+                    <span>Chat y WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="products-section section bg-light" id="productos">
         <div class="section-header">
             <h2 class="section-title">Productos Destacados</h2>
@@ -143,145 +195,512 @@
             <a href="productos.html" class="btn-primary">Ver Todos los Productos</a>
         </div>
     </section>
-
-    <section class="why-homelife section">
-        <div class="section-header">
-            <h2 class="section-title">¿Por Qué Elegir HomeLife?</h2>
-            <p class="section-subtitle">
-                Somos líderes en equipos médicos certificados con más de 15 años de experiencia en el sector salud
-            </p>
-        </div>
-
-        <div class="why-grid">
-            <div class="why-card">
-                <div class="why-icon">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&auto=format&q=80" alt="Calidad Certificada">
-                </div>
-                <h3>Calidad Certificada</h3>
-                <p>Todos nuestros productos cuentan con certificación INVIMA y cumplen estándares internacionales de calidad.</p>
+    <section class="value-story">
+        <div class="value-content-wrapper">
+            <div class="value-intro">
+                <span class="value-badge">✨ La Diferencia HomeLife</span>
+                <h2 class="value-title">Más que equipos médicos.<br/>Tu aliado en salud.</h2>
+                <p class="value-subtitle">
+                    15 años transformando vidas con tecnología médica certificada, 
+                    atención personalizada y una comunidad de 25,000+ familias colombianas.
+                </p>
             </div>
 
-            <div class="why-card">
-                <div class="why-icon">
-                    <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop&auto=format&q=80" alt="Tecnología de Vanguardia">
+            <div class="value-grid">
+                <!-- Feature 1 -->
+                <div class="value-card">
+                    <div class="value-card-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop&auto=format&q=80" alt="Certificación INVIMA">
+                        <div class="value-card-overlay">
+                            <div class="value-icon-large">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-card-content">
+                        <h3>Certificación INVIMA Verificable</h3>
+                        <p>Cada equipo incluye registro sanitario vigente. Puedes verificar su autenticidad directamente en la base de datos del INVIMA con el código que proporcionamos.</p>
+                        <a href="nosotros.html#certificaciones" class="value-link">
+                            Ver Certificados
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <h3>Tecnología de Vanguardia</h3>
-                <p>Equipos médicos de última generación con la más avanzada tecnología para diagnóstico y tratamiento.</p>
-            </div>
 
-            <div class="why-card">
-                <div class="why-icon">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop&auto=format&q=80" alt="Garantía Extendida">
+                <!-- Feature 2 -->
+                <div class="value-card">
+                    <div class="value-card-image">
+                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=800&h=600&fit=crop&auto=format&q=80" alt="Tecnología Avanzada">
+                        <div class="value-card-overlay">
+                            <div class="value-icon-large">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-card-content">
+                        <h3>Tecnología de Última Generación</h3>
+                        <p>Importamos directamente de fabricantes líderes mundiales. Todos nuestros equipos incorporan las últimas innovaciones en medición y diagnóstico médico.</p>
+                        <a href="productos.html?categoria=tecnologia" class="value-link">
+                            Explorar Tecnología
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <h3>Garantía Extendida</h3>
-                <p>2 años de garantía en todos nuestros productos más servicio técnico especializado incluido.</p>
-            </div>
 
-            <div class="why-card">
-                <div class="why-icon">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format&q=80" alt="Asesoría Profesional">
+                <!-- Feature 3 -->
+                <div class="value-card">
+                    <div class="value-card-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=600&fit=crop&auto=format&q=80" alt="Garantía Extendida">
+                        <div class="value-card-overlay">
+                            <div class="value-icon-large">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-card-content">
+                        <h3>2 Años de Garantía + Soporte</h3>
+                        <p>Garantía extendida sin letra pequeña. Servicio técnico especializado, repuestos originales y asesoría técnica gratuita de por vida.</p>
+                        <a href="nosotros.html#garantias" class="value-link">
+                            Conocer Garantías
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <h3>Asesoría Profesional</h3>
-                <p>Equipo de expertos disponibles para asesorarte en la selección del equipo médico ideal para tus necesidades.</p>
+
+                <!-- Feature 4 -->
+                <div class="value-card">
+                    <div class="value-card-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop&auto=format&q=80" alt="Asesoría Médica">
+                        <div class="value-card-overlay">
+                            <div class="value-icon-large">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-card-content">
+                        <h3>Asesoría de Expertos en Salud</h3>
+                        <p>Nuestro equipo incluye profesionales de la salud que te guían en la selección del equipo ideal según tus necesidades específicas.</p>
+                        <a href="contacto.html" class="value-link">
+                            Consultar Experto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="afiliados">
-       <h2 class="section-title">Conviértete En Distrubuidor</h2>
-       <p class="section-subtitle">Trabajemos juntos en el bienestar de los colombianos</p>
+
+    <!-- ===== SOCIAL PROOF - NÚMEROS QUE HABLAN ===== -->
+    <section class="stats-showcase">
+        <div class="stats-bg">
+            <div class="stats-pattern"></div>
+        </div>
+        <div class="stats-content">
+            <div class="stats-header">
+                <span class="stats-badge">📊 Nuestro Impacto</span>
+                <h2>Números que nos respaldan</h2>
+                <p>Más de 15 años construyendo confianza en el sector salud colombiano</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25000">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Familias Atendidas</div>
+                    <div class="stat-description">Clientes satisfechos en todo Colombia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Satisfacción</div>
+                    <div class="stat-description">Clientes recomiendan nuestros productos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                    <div class="stat-description">Líderes en equipos médicos certificados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Productos Certificados</div>
+                    <div class="stat-description">Catálogo con registro sanitario INVIMA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMMUNITY HUB - ESTILO REVISTA CON CONTENIDO REAL ===== -->
+    <section class="community-magazine">
+        <div class="magazine-header">
+            <span class="magazine-badge">🌟 Nuestra Comunidad Digital</span>
+            <h2>Conecta con HomeLife en Redes Sociales</h2>
+            <p>Contenido educativo, consejos de salud y una comunidad activa de más de 25,000 personas</p>
+        </div>
+
+        <div class="magazine-grid">
+            <!-- Instagram - CON FEED REAL -->
+            <article class="magazine-card instagram-mag">
+                <div class="mag-content-wrapper">
+                    <div class="mag-text-side">
+                        <div class="mag-icon instagram-gradient">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div class="mag-info">
+                            <h3>Instagram</h3>
+                            <div class="mag-handle">@homelifecol</div>
+                            <div class="mag-followers">8.5K seguidores</div>
+                        </div>
+                        <p class="mag-description">
+                            Comparte momentos de salud, tips diarios y únete a nuestra comunidad más visual. 
+                            Stories diarias con consejos de expertos.
+                        </p>
+                        <a href="https://www.instagram.com/homelifecol?igsh=ZHd1NDZxNm15N2Q0" target="_blank" class="mag-cta instagram-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                            </svg>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                    <div class="mag-visual-side">
+                        <div class="instagram-feed-container">
+                            <div class="instagram-feed-grid" id="instagramFeed">
+                                <!-- Las imágenes se cargarán dinámicamente aquí -->
+                                <div class="instagram-feed-item" style="background: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=400&fit=crop') center/cover;"></div>
+                                <div class="instagram-feed-item" style="background: url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=400&h=400&fit=crop') center/cover;"></div>
+                                <div class="instagram-feed-item" style="background: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop') center/cover;"></div>
+                                <div class="instagram-feed-item" style="background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=400&fit=crop') center/cover;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TikTok - CON VIDEO EMBED REAL -->
+            <article class="magazine-card tiktok-mag">
+                <div class="mag-content-wrapper reverse">
+                    <div class="mag-visual-side">
+                        <div class="tiktok-phone-container">
+                            <div class="tiktok-video-embed">
+                                <!-- EMBED REAL DE TIKTOK - Reemplaza con tu video ID -->
+                                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol" data-unique-id="homelifecol" data-embed-type="creator" style="max-width: 780px; min-width: 288px;"> 
+                                    <section> 
+                                        <a target="_blank" href="https://www.tiktok.com/@homelifecol?refer=creator_embed">@homelifecol</a> 
+                                    </section> 
+                                </blockquote>
+                                <script async src="https://www.tiktok.com/embed.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mag-text-side">
+                        <div class="mag-icon tiktok-gradient">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </div>
+                        <div class="mag-info">
+                            <h3>TikTok</h3>
+                            <div class="mag-handle">@homelifecol</div>
+                            <div class="mag-followers">12K+ seguidores</div>
+                        </div>
+                        <p class="mag-description">
+                            Contenido viral educativo sobre salud. Videos cortos, dinámicos y llenos de 
+                            información valiosa para tu bienestar diario.
+                        </p>
+                        <a href="https://www.tiktok.com/@homelifecol" target="_blank" class="mag-cta tiktok-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                            Ver en TikTok
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- YouTube - CON VIDEO EMBED REAL -->
+            <article class="magazine-card youtube-mag">
+                <div class="mag-content-wrapper">
+                    <div class="mag-text-side">
+                        <div class="mag-icon youtube-gradient">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </div>
+                        <div class="mag-info">
+                            <h3>YouTube</h3>
+                            <div class="mag-handle">HomeLife Colombia</div>
+                            <div class="mag-followers">4.2K suscriptores</div>
+                        </div>
+                        <p class="mag-description">
+                            Tutoriales completos, guías detalladas y contenido educativo premium. 
+                            Aprende a usar correctamente tus equipos médicos.
+                        </p>
+                        <a href="https://www.youtube.com/@homelifecol" target="_blank" class="mag-cta youtube-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            Suscribirse
+                        </a>
+                    </div>
+                    <div class="mag-visual-side">
+                        <div class="youtube-embed-container">
+                            <!-- VIDEO EMBED DE YOUTUBE - Reemplaza VIDEO_ID con el ID de tu video -->
+                            <iframe 
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1&modestbranding=1&rel=0" 
+                                title="Tutorial HomeLife" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials-section">
+        <div class="testimonials-header">
+            <span class="testimonials-badge">💬 Testimonios Reales</span>
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p>Miles de familias confían en HomeLife para cuidar su salud</p>
+        </div>
+
+        <div class="testimonials-carousel">
+            <div class="testimonials-track">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excelente servicio y productos de calidad. El tutorial de YouTube me ayudó muchísimo a usar mi nuevo glucómetro. 100% recomendado."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">María González</div>
+                            <div class="testimonial-source">Cliente verificada • Vía Facebook</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Los sigo en TikTok y siempre aprendo algo nuevo. Contenido muy educativo y entretenido a la vez. Compré mi tensiómetro aquí y estoy encantado."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">Carlos Ramírez</div>
+                            <div class="testimonial-source">Cliente verificado • Vía Instagram</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Rápida respuesta en redes sociales. Me ayudaron a escoger el tensiómetro perfecto para mi abuela. Llegó en 2 días."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">Ana Martínez</div>
+                            <div class="testimonial-source">Cliente verificada • Vía TikTok</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"La mejor inversión para el cuidado de la salud familiar. Productos certificados y atención personalizada. Volveré a comprar sin duda."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">Jorge Sánchez</div>
+                            <div class="testimonial-source">Cliente verificado • Vía YouTube</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicados para efecto infinito -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excelente servicio y productos de calidad. El tutorial de YouTube me ayudó muchísimo a usar mi nuevo glucómetro. 100% recomendado."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">María González</div>
+                            <div class="testimonial-source">Cliente verificada • Vía Facebook</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Los sigo en TikTok y siempre aprendo algo nuevo. Contenido muy educativo y entretenido a la vez. Compré mi tensiómetro aquí y estoy encantado."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-name">Carlos Ramírez</div>
+                            <div class="testimonial-source">Cliente verificado • Vía Instagram</div>
+                            <div class="testimonial-verified">✓ Compra verificada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISTRIBUTOR CTA ===== -->
+    <section class="distributor-cta">
+        <h2>Conviértete En Distribuidor</h2>
+        <p>Trabajemos juntos en el bienestar de los colombianos</p>
         <a href="distribuidores.html" class="distributor-btn">Conoce Más</a>
     </section>
 
-    <section class="media-section section" id="videos">
-    <div class="section-header">
-        <h2 class="section-title">Guia Detallada Del Glucometro</h2>
-    </div>
+    <!-- ===== FINAL CTA - REDES SOCIALES ===== -->
+    <section class="final-cta">
+        <div class="cta-bg-pattern"></div>
+        <div class="final-cta-content">
+            <h2>Únete a nuestra comunidad de 25,000+ personas</h2>
+            <p>Recibe contenido exclusivo, tips de salud, ofertas especiales y atención personalizada en todas nuestras redes sociales</p>
 
-    <div class="container">
-        <div class="media-card">
-        <div class="video-embed youtube-embed">
-            <iframe
-            src="https://www.youtube.com/embed/J0dU2emMaBY?si=oMXlpJ6MWyLRYxiX" 
-            title="HomeLife - Video YouTube"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-            </iframe>
-        </div>
-        </div>
+            <div class="social-buttons-grid">
+                <a href="https://facebook.com/homelifecol" target="_blank" class="social-btn-large">
+                    <div class="social-btn-icon facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="social-btn-label">Facebook</div>
+                    <div class="social-btn-count">15.2K seguidores</div>
+                </a>
 
-        <div class="section-header" style="margin-top: 60px;">
-        <h2 class="section-title">TikTok</h2>
-        </div>
+                <a href="https://www.instagram.com/homelifecol?igsh=ZHd1NDZxNm15N2Q0" target="_blank" class="social-btn-large">
+                    <div class="social-btn-icon instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <div class="social-btn-label">Instagram</div>
+                    <div class="social-btn-count">8.5K seguidores</div>
+                </a>
 
-        <div class="tiktok-grid">
+                <a href="https://www.tiktok.com/@homelifecol" target="_blank" class="social-btn-large">
+                    <div class="social-btn-icon tiktok">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </div>
+                    <div class="social-btn-label">TikTok</div>
+                    <div class="social-btn-count">12K+ seguidores</div>
+                </a>
 
-            <div class="media-card tiktok-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7602365941867154709"
-                data-video-id="7602365941867154709" style="max-width: 100%; min-width: 100%;">
-                <section></section>
-                </blockquote>
+                <a href="https://www.youtube.com/@homelifecol" target="_blank" class="social-btn-large">
+                    <div class="social-btn-icon youtube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div class="social-btn-label">YouTube</div>
+                    <div class="social-btn-count">4.2K suscriptores</div>
+                </a>
             </div>
 
-            <div class="media-card tiktok-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7595249751163931911"
-                data-video-id="7595249751163931911" style="max-width: 100%; min-width: 100%;">
-                <section></section>
-                </blockquote>
-            </div>
-
-            <div class="media-card tiktok-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7589885239179218197"
-                data-video-id="7589885239179218197" style="max-width: 100%; min-width: 100%;">
-                <section></section>
-                </blockquote>
-            </div>
-
-            <div class="media-card tiktok-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@homelifecol/video/7578922992126725387"
-                data-video-id="7578922992126725387" style="max-width: 100%; min-width: 100%;">
-                <section></section>
-                </blockquote>
+            <div class="cta-trust-features">
+                <div class="cta-feature">
+                    <div class="cta-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cta-feature-text">Respuesta en 24h</div>
+                </div>
+                <div class="cta-feature">
+                    <div class="cta-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cta-feature-text">Contenido exclusivo</div>
+                </div>
+                <div class="cta-feature">
+                    <div class="cta-feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cta-feature-text">Ofertas especiales</div>
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
+    <!-- ===== PAYMENTS SECTION CON ANIMACIÓN ===== -->
     <section class="payments-section">
         <div class="container">
             <h2 class="payments-title">
-            Pagos <strong>CONFIABLES</strong> a través de <span class="payu">PayU</span>
+                Pagos <strong>CONFIABLES</strong> a través de <span class="payu">PayU</span>
             </h2>
 
-            <div class="payments-logos">
-            <!-- Tarjetas -->
-            <img src="assets/images/pagos/visa.png" alt="Visa">
-            <img src="assets/images/pagos/mastercard.png" alt="Mastercard">
-            <img src="assets/images/pagos/amex.png" alt="American Express">
-            <img src="assets/images/pagos/dirners.png" alt="Diners Club">
-
-            <!-- Bancos / botones -->
-            <img src="assets/images/pagos/pse.png" alt="PSE">
-            <img src="assets/images/pagos/via.png" alt="Vía Baloto">
-            <img src="assets/images/pagos/baloto.png" alt="Baloto">
-            <img src="assets/images/pagos/efecty.png" alt="Efecty">
-
-            <!-- Nuevos -->
-            <img src="assets/images/pagos/nequi.png" alt="Nequi">
-            <img src="assets/images/pagos/daviplata.png" alt="Daviplata">
-            <img src="assets/images/pagos/llaves.png" alt="Llaves">
+            <div class="payments-scroll-wrapper">
+                <div class="payments-logos payments-track">
+                    <!-- Primera copia -->
+                    <img src="assets/images/pagos/visa.png" alt="Visa">
+                    <img src="assets/images/pagos/mastercard.png" alt="Mastercard">
+                    <img src="assets/images/pagos/amex.png" alt="American Express">
+                    <img src="assets/images/pagos/dirners.png" alt="Diners Club">
+                    <img src="assets/images/pagos/pse.png" alt="PSE">
+                    <img src="assets/images/pagos/via.png" alt="Vía Baloto">
+                    <img src="assets/images/pagos/baloto.png" alt="Baloto">
+                    <img src="assets/images/pagos/efecty.png" alt="Efecty">
+                    <img src="assets/images/pagos/nequi.png" alt="Nequi">
+                    <img src="assets/images/pagos/daviplata.png" alt="Daviplata">
+                    <img src="assets/images/pagos/llaves.png" alt="Llaves">
+                    <img src="assets/images/pagos/visa.png" alt="Visa">
+                    <img src="assets/images/pagos/mastercard.png" alt="Mastercard">
+                    <img src="assets/images/pagos/amex.png" alt="American Express">
+                    <img src="assets/images/pagos/dirners.png" alt="Diners Club">
+                    <img src="assets/images/pagos/pse.png" alt="PSE">
+                    <img src="assets/images/pagos/via.png" alt="Vía Baloto">
+                    <img src="assets/images/pagos/baloto.png" alt="Baloto">
+                    <img src="assets/images/pagos/efecty.png" alt="Efecty">
+                    <img src="assets/images/pagos/nequi.png" alt="Nequi">
+                    <img src="assets/images/pagos/daviplata.png" alt="Daviplata">
+                    <img src="assets/images/pagos/llaves.png" alt="Llaves">
+                </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-<div id="cartModal" class="modal">
-    <div class="modal-content cart-modal-content">
-        <button class="modal-close" onclick="Cart.closeModal()">×</button>
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close" onclick="Cart.closeModal()">×</button>
             <div class="cart-modal-body">
                 <h2>🛒 Mi Carrito</h2>
                 <div id="cartItems" class="cart-items"></div>
@@ -409,6 +828,40 @@
             }
         }
         
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    if (counter && !counter.classList.contains('animated')) {
+                        counter.classList.add('animated');
+                        animateCounter(counter);
+                    }
+                }
+            });
+        }, observerOptions);
+        
         function openFeaturedDetail(slug) {
                 const s = String(slug || '').trim();
                 if (!s) return;
@@ -421,6 +874,10 @@
             if (window.SliderSystem) {
                 SliderSystem.init();
             }
+
+             document.querySelectorAll('.stat-item').forEach(item => {
+                observer.observe(item);
+            });
             
             setTimeout(() => {
                 document.getElementById('preloader').style.opacity = '0';

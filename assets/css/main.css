@@ -23,7 +23,7 @@
     --secondary-light: #D6D8F0;
     
     /* Línea Medic Life */
-    --medic-turquoise: #47B1BE;
+    --medic-turquoise: #00a0dc;
     --medic-dark-turquoise: #286973;
     
     /* Colores de Apoyo */
@@ -701,7 +701,7 @@ img {
 }
 
 .main-nav {
-    background: var(--secondary-blue);
+    background: var(--primary-blue);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
