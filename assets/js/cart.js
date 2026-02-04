@@ -1,14 +1,8 @@
-/* =====================================================
-   HOMELIFE PREMIUM - CART.JS
-   Sistema completo de carrito de compras
-   ===================================================== */
 
-// ===== ESTADO DEL CARRITO =====
 let cart = [];
 const CART_STORAGE_KEY = 'homelife_cart';
 const FREE_SHIPPING_THRESHOLD = 150000;
 
-// ===== INICIALIZAR CARRITO =====
 function initCart() {
     loadCartFromStorage();
     updateCartUI();
@@ -16,7 +10,6 @@ function initCart() {
     console.log('Sistema de carrito inicializado');
 }
 
-// ===== CARGAR CARRITO DESDE LOCALSTORAGE =====
 function loadCartFromStorage() {
     const savedCart = localStorage.getItem(CART_STORAGE_KEY);
     if (savedCart) {
@@ -29,7 +22,6 @@ function loadCartFromStorage() {
     }
 }
 
-// ===== GUARDAR CARRITO EN LOCALSTORAGE =====
 function saveCartToStorage() {
     try {
         localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
@@ -38,7 +30,6 @@ function saveCartToStorage() {
     }
 }
 
-// ===== AGREGAR PRODUCTO AL CARRITO =====
 function addToCart(product, quantity = 1) {
     // Validar producto
     if (!product || !product.id) {
@@ -46,25 +37,20 @@ function addToCart(product, quantity = 1) {
         return false;
     }
 
-    // Validar cantidad
     if (quantity < 1) {
         quantity = 1;
     }
 
-    // Verificar si el producto ya existe en el carrito
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
-        // Actualizar cantidad
         existingItem.quantity += quantity;
         
-        // Verificar stock
         if (product.stock && existingItem.quantity > product.stock) {
             existingItem.quantity = product.stock;
             showNotification(`Stock máximo disponible: ${product.stock}`, 'warning');
         }
     } else {
-        // Agregar nuevo producto
         cart.push({
             id: product.id,
             name: product.name,
@@ -77,7 +63,6 @@ function addToCart(product, quantity = 1) {
         });
     }
 
-    // Guardar y actualizar UI
     saveCartToStorage();
     updateCartUI();
     updateCartBadge();

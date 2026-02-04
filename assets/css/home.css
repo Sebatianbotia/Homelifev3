@@ -517,7 +517,7 @@
 }
 
 .trust-banner {
-            background: linear-gradient(135deg, #00a0dc 0%, #0077b6 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             padding: 16px 0;
             top: 0;
             z-index: 999;
@@ -597,7 +597,7 @@
             display: inline-block;
             padding: 10px 24px;
             background: rgba(0, 160, 220, 0.1);
-            color: #00a0dc;
+            color: var(--primary-blue);
             border-radius: 50px;
             font-size: 0.95rem;
             font-weight: 600;
@@ -709,7 +709,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #00a0dc;
+            color: var(--primary-blue);
             font-weight: 600;
             text-decoration: none;
             transition: gap 0.3s;
@@ -722,7 +722,7 @@
         /* Stats Showcase */
         .stats-showcase {
             padding: 100px 20px;
-            background: #00a0dc;
+            background: var(--primary-blue);
             position: relative;
             overflow: hidden;
         }
@@ -843,7 +843,7 @@
             display: inline-block;
             padding: 10px 24px;
             background: rgba(0, 160, 220, 0.1);
-            color: #00a0dc;
+            color: var(--primary-blue);
             border-radius: 50px;
             font-size: 0.95rem;
             font-weight: 600;
@@ -947,7 +947,7 @@
 
         .mag-followers {
             font-size: 1rem;
-            color: #00a0dc;
+            color: var(--primary-blue);
             font-weight: 600;
         }
 
@@ -1097,7 +1097,7 @@
             display: inline-block;
             padding: 10px 24px;
             background: rgba(0, 160, 220, 0.1);
-            color: #00a0dc;
+            color: var(--primary-blue);
             border-radius: 50px;
             font-size: 0.95rem;
             font-weight: 600;
@@ -1187,7 +1187,7 @@
         }
 
         .testimonial-verified {
-            color: #00a0dc;
+            color: var(--primary-blue);
             font-size: 0.85rem;
             font-weight: 600;
         }
@@ -1216,7 +1216,7 @@
         /* Final CTA */
         .final-cta {
             padding: 120px 20px;
-            background: linear-gradient(135deg, #00a0dc 0%, #0077b6 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0077b6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -1227,7 +1227,6 @@
             opacity: 0.1;
             background-image: 
                 radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%);
         }
 
         .final-cta-content {
@@ -1380,7 +1379,7 @@
 
         .payments-title-animated strong {
             font-weight: 900;
-            color: #00a0dc;
+            color: var(--primary-blue);
         }
 
         .payu-highlight {
